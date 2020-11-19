@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 
 @RestController
+@RequestMapping("/")
 public class TvaResource {
 
     @Autowired
     private HashMap<String, Float> hashMap;
 
-    @RequestMapping("/")
-    public TvaListResponse getTva()
+    @RequestMapping("")
+    public TvaListResponse getAllTva()
     {
         return new TvaListResponse(hashMap);
     }
