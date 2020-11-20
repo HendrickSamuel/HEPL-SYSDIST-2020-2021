@@ -1,5 +1,6 @@
 package io.hepl.cartservice;
 
+import io.hepl.cartservice.models.Client;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +12,7 @@ import java.util.List;
 public class CartServiceApplication {
 
     @Bean
-    public ArrayList<String> getListe()
+    public ArrayList<Client> getListe()
     {
         return new ArrayList<>();
     }
