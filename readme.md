@@ -15,7 +15,7 @@ La partie GRPC et SOAP sont **optionnels** selon le temps restant.
 #### micro-service TVA
 
 | fonctionnalité        | requête (url)         | note                                          |
-| --------------------- | --------------------- | --------------------------------------------- |
+| -------------- | ----------------------------------------- | --------------------------------------------------------- |
 | getListTvaAndCategory | http://service/       |                                               |
 | getTvaByCategory      | http://service/{type} | renvoi de catégorie **autre** en cas d'erreur |
 
@@ -35,7 +35,7 @@ La partie GRPC et SOAP sont **optionnels** selon le temps restant.
 #### micro-service CART
 
 | fonctionnalité | requête (urel)                                        | note                   |
-| -------------- | ----------------------------------------------------- | ---------------------- |
+| -------------- | ----------------------------------------- | --------------------------------------------------------- |
 | addItem        | http://service/cart/add/{user}/{itemId}/{quantity}    | pas de corps en retour |
 | removeItem     | http://service/cart/remove/{user}/{itemId}/{quantity} | pas de corps en retour |
 | listItems      | http://service/cart/list/{user}                       |                        |
