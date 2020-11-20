@@ -1,6 +1,6 @@
 package io.hepl.stockservice;
 
-import io.hepl.stockservice.model.Item;
+import io.hepl.stockservice.models.Item;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

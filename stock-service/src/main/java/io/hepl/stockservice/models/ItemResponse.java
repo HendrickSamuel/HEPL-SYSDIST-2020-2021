@@ -2,7 +2,7 @@
 //Projet : stock-service                               
 //Date de la création : 19/11/2020
 
-package io.hepl.stockservice.model;
+package io.hepl.stockservice.models;
 
 public class ItemResponse {
 

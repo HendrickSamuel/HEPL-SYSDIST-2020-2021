@@ -4,9 +4,8 @@
 
 package io.hepl.stockservice.resources;
 
-import io.hepl.stockservice.model.Item;
-import io.hepl.stockservice.model.ItemResponse;
-import io.hepl.stockservice.model.StockAvailabilityResponse;
+import io.hepl.stockservice.models.Item;
+import io.hepl.stockservice.models.StockAvailabilityResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;

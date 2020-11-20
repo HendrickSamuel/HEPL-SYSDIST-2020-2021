@@ -4,9 +4,9 @@
 
 package io.hepl.stockservice.resources;
 
-import io.hepl.stockservice.model.Item;
-import io.hepl.stockservice.model.ItemListResponse;
-import io.hepl.stockservice.model.ItemResponse;
+import io.hepl.stockservice.models.Item;
+import io.hepl.stockservice.models.ItemListResponse;
+import io.hepl.stockservice.models.ItemResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/items")
