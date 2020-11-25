@@ -45,7 +45,6 @@ public class OrderResource {
                 item.setId(key);
                 item.setUnitPrice(23f); //todo: appel au microservice du stock ?
                 item.setCommande(command);
-                //repository.save(item);
                 command.getItems().add(item);
             }
         }

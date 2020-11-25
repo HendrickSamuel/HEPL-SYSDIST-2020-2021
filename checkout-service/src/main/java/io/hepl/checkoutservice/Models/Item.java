@@ -2,20 +2,15 @@
 //Projet : order-service                               
 //Date de la création : 20/11/2020
 
-package io.hepl.orderservice.models;
+package io.hepl.checkoutservice.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
-@Entity
+
 public class Item {
 
-    @ManyToOne
-    private Command commande;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int itemId;
 
     private String id;
@@ -23,22 +18,6 @@ public class Item {
     private float unitPrice;
 
     public Item() {
-    }
-
-    public Item(Command commande, String id, int quantity, float unitPrice) {
-        this.commande = commande;
-        this.id = id;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-    }
-
-    @JsonIgnore
-    public Command getCommande() {
-        return commande;
-    }
-
-    public void setCommande(Command commande) {
-        this.commande = commande;
     }
 
     public String getId() {
