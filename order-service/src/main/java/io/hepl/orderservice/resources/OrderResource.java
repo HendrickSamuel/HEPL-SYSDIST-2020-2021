@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 @RestController
@@ -37,16 +38,8 @@ public class OrderResource {
         //repo.save(command);
         if(person.getItems() != null)
         {
-            Set<String> keys = person.getItems().keySet();
-            for(String key : keys)
-            {
-                Item item = new Item();
-                item.setQuantity(person.getItems().get(key));
-                item.setId(key);
-                item.setUnitPrice(23f); //todo: appel au microservice du stock ?
-                item.setCommande(command);
-                command.getItems().add(item);
-            }
+            ArrayList<Item> items = person.getItems();
+            command.setItems(items);
         }
         command = repo.save(command);
 

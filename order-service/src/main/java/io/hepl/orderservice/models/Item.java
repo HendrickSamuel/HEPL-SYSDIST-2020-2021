@@ -21,6 +21,7 @@ public class Item {
     private String id;
     private int quantity;
     private float unitPrice;
+    private float tvaPrice;
 
     public Item() {
     }
@@ -70,6 +71,18 @@ public class Item {
         this.unitPrice = unitPrice;
     }
 
+    public void setTvaPrice(float price) {
+        this.tvaPrice = price;
+    }
+
+    public float getTvaPrice() {
+        return tvaPrice;
+    }
+
+    public void setWanted(int wanted) {
+        this.quantity = wanted;
+    }
+
     @JsonIgnore
     public int getItemId() {
         return itemId;
@@ -78,4 +91,9 @@ public class Item {
     public void setItemId(int itemId) {
         this.itemId = itemId;
     }
+
+    public void setPrice(float price) {
+        this.unitPrice = price;
+    }
+
 }

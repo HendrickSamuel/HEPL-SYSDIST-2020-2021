@@ -10,6 +10,15 @@
 
 La partie GRPC et SOAP sont **optionnels** selon le temps restant. 
 
+#### micro-service GENERAL
+
+| fonctionnalité      | requête (url)                                              | note                            | micro-service source    |
+| ------------------- | ---------------------------------------------------------- | ------------------------------- | ----------------------- |
+| getAllSellableItems | http://localhost:8080/items/                               | -                               | micro-service **stock** |
+| addItemToCart       | http://localhost:8080/cart/add/{user}/{item}/{quantity}    | ne retourne rien pour le moment | micro-service **cart**  |
+| removeItemFromCart  | http://localhost:8080/cart/remove/{user}/{item}/{quantity} | ne retourne rien pour le moment | micro-service **cart**  |
+| getUsersCart        | http://localhost:8080/cart/get/{user}                      | -                               | micro-service **cart**  |
+
 
 
 #### micro-service TVA

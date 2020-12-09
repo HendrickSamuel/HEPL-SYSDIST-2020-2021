@@ -1,10 +1,10 @@
-package io.hepl.checkoutservice;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CheckoutServiceApplicationTests {
+class DemoApplicationTests {
 
     @Test
     void contextLoads() {

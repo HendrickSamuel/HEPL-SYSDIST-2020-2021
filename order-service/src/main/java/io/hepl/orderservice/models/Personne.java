@@ -4,12 +4,12 @@
 
 package io.hepl.orderservice.models;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Personne {
 
     private String userID;
-    private HashMap<String, Integer> items;
+    private ArrayList<Item> items;
 
     public Personne() {
     }
@@ -18,11 +18,11 @@ public class Personne {
         this.userID = name;
     }
 
-    public HashMap<String, Integer> getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 
-    public void setItems(HashMap<String, Integer> items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
 

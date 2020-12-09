@@ -1,0 +1,8 @@
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+    eviction-interval-timer-in-ms: 10000
+    response-cache-update-interval-ms: 5000

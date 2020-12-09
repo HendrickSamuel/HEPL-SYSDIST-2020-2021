@@ -6,8 +6,6 @@ package io.hepl.checkoutservice.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
-
 
 public class Item {
 
