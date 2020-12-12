@@ -61,7 +61,7 @@ public class Command {
         float total = 0;
         for(Item item: items)
         {
-            total += item.getTotalPrice();
+            //total += item.getTotalPrice();
         }
         return total;
     }

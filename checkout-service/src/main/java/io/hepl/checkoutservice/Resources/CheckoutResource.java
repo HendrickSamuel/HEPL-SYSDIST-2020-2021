@@ -21,17 +21,16 @@ public class CheckoutResource {
     @Autowired
     private ClientRepository clientRepository;
 
-    @PostMapping(path = "/")
-    public Client request(@RequestBody Command command)
+    @PostMapping(path = "/{userId}")
+    public Client request(@RequestBody Command command, @PathVariable int userId)
     {
-        Client client = new Client("Samuel", "pwd", "adresse", 3650.2f);
+        Client client = clientRepository.findById(userId); //todo: si pas de client alors 404 ?
         Payement payement = new Payement(client, command.getCommande());
         client.getPayements().add(payement);
         client.setPorteFeuille(client.getPorteFeuille()-command.getAmount());
         client = clientRepository.save(client);
 
         return client;
-
     }
 
     @PostMapping(path = "/test")
@@ -44,6 +43,5 @@ public class CheckoutResource {
         client = clientRepository.save(client);
 
         return client;
-
     }
 }

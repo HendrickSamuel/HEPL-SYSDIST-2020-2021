@@ -11,9 +11,6 @@ public class Item {
     private String type;
     private float price;
     private int stock;
-    private int wanted;
-
-    private float tva;
 
     public Item() {
     }
@@ -73,26 +70,5 @@ public class Item {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public int getWanted() {
-        return wanted;
-    }
-
-    public void setWanted(int wanted) {
-        this.wanted = wanted;
-    }
-
-    public float getTva() {
-        return tva;
-    }
-
-    public float getTvaPrice()
-    {
-        return getPrice() + getPrice() * (getTva()/100);
-    }
-
-    public void setTva(float tva) {
-        this.tva = tva;
     }
 }
