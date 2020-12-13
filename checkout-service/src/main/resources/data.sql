@@ -1,0 +1,1 @@
+INSERT INTO CLIENT VALUES (1, 'test', 'samuel', 'pwd', 235.2);

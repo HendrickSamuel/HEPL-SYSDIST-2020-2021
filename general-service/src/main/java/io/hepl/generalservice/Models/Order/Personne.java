@@ -4,7 +4,7 @@
 
 package io.hepl.generalservice.Models.Order;
 
-import io.hepl.generalservice.Models.Stock.Item;
+import io.hepl.generalservice.Models.checkout.Item;
 
 import java.util.ArrayList;
 

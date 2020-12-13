@@ -1,21 +1,30 @@
 //Auteur : HENDRICK Samuel                                                                                              
-//Projet : order-service                               
-//Date de la création : 20/11/2020
+//Projet : stock-service
+//Date de la création : 19/11/2020
 
 package io.hepl.generalservice.Models.checkout;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
 public class Item {
-
-    private int itemId;
-
     private String id;
-    private int quantity;
-    private float unitPrice;
+    private String name;
+    private String description;
+    private String type;
+    private float price;
+    private int stock;
+    private int wanted;
+
+    private float tva;
 
     public Item() {
+    }
+
+    public Item(String id, String name, String description, String type, float price, int stock) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.type = type;
+        this.price = price;
+        this.stock = stock;
     }
 
     public String getId() {
@@ -26,33 +35,64 @@ public class Item {
         this.id = id;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getName() {
+        return name;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public float getUnitPrice() {
-        return unitPrice;
+    public String getDescription() {
+        return description;
     }
 
-    public float getTotalPrice()
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getWanted() {
+        return wanted;
+    }
+
+    public void setWanted(int wanted) {
+        this.wanted = wanted;
+    }
+
+    public float getTva() {
+        return tva;
+    }
+
+    public float getTvaPrice()
     {
-        return getUnitPrice()*getQuantity();
+        return getPrice() + getPrice() * (getTva()/100);
     }
 
-    public void setUnitPrice(float unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    @JsonIgnore
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public void setTva(float tva) {
+        this.tva = tva;
     }
 }

@@ -34,8 +34,7 @@ public class OrderResource {
     public Command request(@RequestBody Personne person)
     {
         Command command = new Command(person.getUserID());
-        command.setStatus("EN TRAITEMENT");
-        //repo.save(command);
+        command.setStatus("EN ATTENTE DE VALIDATION");
         if(person.getItems() != null)
         {
             ArrayList<Item> items = person.getItems();
@@ -45,6 +44,8 @@ public class OrderResource {
 
         return command;
     }
+
+    //todo: ajouter une méthode pour update le status
 
     @RequestMapping("{commande}")
     public Command getCommande(@PathVariable int commande)
