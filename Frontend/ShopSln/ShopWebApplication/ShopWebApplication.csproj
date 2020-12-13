@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Views\Catalog" />
+      <Folder Include="wwwroot\fonts" />
+      <Folder Include="wwwroot\img" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Controllers\Catalog.cs" />
+      <Compile Remove="Views\Catalog\Catalog.cshtml.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Views\Catalog\Catalog.cshtml" />
+    </ItemGroup>
+
+</Project>
