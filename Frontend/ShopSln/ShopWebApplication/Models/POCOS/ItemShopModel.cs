@@ -1,25 +1,42 @@
-﻿namespace ShopWebApplication.Models.POCOS
+﻿using System.Text.Json.Serialization;
+
+namespace ShopWebApplication.Models.POCOS
 {
     public class ItemShopModel
     {
         #region Public Properties
-        public int Id { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+        
+        [JsonPropertyName("name")]
         public string Name { get; set; }
-        public ItemType ItemType { get; set; }
+        
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
+        
+        [JsonPropertyName("stock")]
         public int Stock { get; set; }
+        
+        [JsonPropertyName("price")]
         public float Price { get; set; }
+        
+        [JsonPropertyName("description")]
         public string Description { set; get; }
+        
         #endregion
+
+        public override string ToString()
+        {
+            return $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Type)}: {Type}, {nameof(Stock)}: {Stock}, {nameof(Price)}: {Price}, {nameof(Description)}: {Description}";
+        }
     }
 
-    public enum ItemType
-    {
-        Bouffe,
-        Livre,
-        Essentiel,
-        Bricolage,
-        Autre
-    }
-    
-    
+    // public enum ItemType
+    // {
+    //     Bouffe,
+    //     Livre,
+    //     Essentiel,
+    //     Bricolage,
+    //     Autre
+    // }
 }
