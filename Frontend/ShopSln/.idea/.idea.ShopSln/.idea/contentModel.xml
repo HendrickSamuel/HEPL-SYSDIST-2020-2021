@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="ShopSln.sln" t="IncludeFlat" />
+      <e p="ShopWebApplication" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="CatalogController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="ItemShopHelper.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ErrorViewModel.cs" t="Include" />
+          <e p="POCOS" t="Include">
+            <e p="ItemShopModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ShopWebApplication.AssemblyInfo.cs" t="Include" />
+              <e p="ShopWebApplication.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="ShopWebApplication.csproj" t="IncludeRecursive" />
+        <e p="Startup.cs" t="Include" />
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Catalog" t="Include">
+            <e p="Catalog.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="main.css" t="Include" />
+            <e p="main.css.map" t="Include" />
+            <e p="main.scss" t="Include" />
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="fonts" t="Include">
+            <e p="Manrope" t="Include">
+              <e p="Manrope-Bold.ttf" t="Include" />
+              <e p="Manrope-ExtraBold.ttf" t="Include" />
+              <e p="Manrope-ExtraLight.ttf" t="Include" />
+              <e p="Manrope-Light.ttf" t="Include" />
+              <e p="Manrope-Medium.ttf" t="Include" />
+              <e p="Manrope-Regular.ttf" t="Include" />
+              <e p="Manrope-SemiBold.ttf" t="Include" />
+            </e>
+            <e p="Roundo" t="Include">
+              <e p="Roundo-Bold.otf" t="Include" />
+              <e p="Roundo-ExtraLight.otf" t="Include" />
+              <e p="Roundo-Light.otf" t="Include" />
+              <e p="Roundo-Medium.otf" t="Include" />
+              <e p="Roundo-Regular.otf" t="Include" />
+              <e p="Roundo-SemiBold.otf" t="Include" />
+            </e>
+            <e p="Sansation" t="Include">
+              <e p="Sansation_Bold.ttf" t="Include" />
+              <e p="Sansation_Light.ttf" t="Include" />
+              <e p="Sansation_Regular.ttf" t="Include" />
+            </e>
+            <e p="Stewart" t="Include">
+              <e p="stewartsans.ttf" t="Include" />
+            </e>
+          </e>
+          <e p="img" t="Include">
+            <e p="components" t="Include">
+              <e p="cart.svg" t="Include" />
+            </e>
+            <e p="item-1.jpg" t="Include" />
+            <e p="item-2.jpg" t="Include" />
+            <e p="item-3.jpg" t="Include" />
+            <e p="item-4.jpg" t="Include" />
+            <e p="item-5.jpg" t="Include" />
+            <e p="not-found.jpg" t="Include" />
+            <e p="outils.jpg" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="ajax" t="Include" />
+            <e p="MySlider.js" t="Include" />
+            <e p="site.js" t="Include" />
+            <e p="testScript.js" t="Include" />
+          </e>
+          <e p="lib" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p="dist" t="Include">
+                <e p="css" t="Include">
+                  <e p="bootstrap-grid.css" t="Include" />
+                  <e p="bootstrap-grid.css.map" t="Include" />
+                  <e p="bootstrap-grid.min.css" t="Include" />
+                  <e p="bootstrap-grid.min.css.map" t="Include" />
+                  <e p="bootstrap-reboot.css" t="Include" />
+                  <e p="bootstrap-reboot.css.map" t="Include" />
+                  <e p="bootstrap-reboot.min.css" t="Include" />
+                  <e p="bootstrap-reboot.min.css.map" t="Include" />
+                  <e p="bootstrap.css" t="Include" />
+                  <e p="bootstrap.css.map" t="Include" />
+                  <e p="bootstrap.min.css" t="Include" />
+                  <e p="bootstrap.min.css.map" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="bootstrap.bundle.js" t="Include" />
+                  <e p="bootstrap.bundle.js.map" t="Include" />
+                  <e p="bootstrap.bundle.min.js" t="Include" />
+                  <e p="bootstrap.bundle.min.js.map" t="Include" />
+                  <e p="bootstrap.js" t="Include" />
+                  <e p="bootstrap.js.map" t="Include" />
+                  <e p="bootstrap.min.js" t="Include" />
+                  <e p="bootstrap.min.js.map" t="Include" />
+                </e>
+              </e>
+              <e p="LICENSE" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p="dist" t="Include">
+                <e p="jquery.js" t="Include" />
+                <e p="jquery.min.js" t="Include" />
+                <e p="jquery.min.map" t="Include" />
+              </e>
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+              <e p="LICENSE.md" t="Include" />
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="swipper" t="Include">
+              <e p="css" t="Include">
+                <e p="swiper.min.css" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="swiper.min.js" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+    </e>
+    <e p="C:\Users\Silvio\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ShopSln.1643659596.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Roaming\JetBrains\Rider2020.2\javascript\extLibs\http_unpkg.com_swiper_swiper-bundle.js" t="IncludeRecursive" />
+  </component>
+</project>
