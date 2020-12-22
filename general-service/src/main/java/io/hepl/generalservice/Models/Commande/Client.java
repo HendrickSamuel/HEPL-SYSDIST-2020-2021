@@ -5,7 +5,6 @@
 package io.hepl.generalservice.Models.Commande;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Client {
     private String userID;

@@ -31,7 +31,7 @@ public class OrderResource {
     @PostMapping(
             consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Command request(@RequestBody Personne person)
+    public Command request(@RequestBody Personne person, @PathVariable boolean preview)
     {
         Command command = new Command(person.getUserID());
         command.setStatus("EN ATTENTE DE VALIDATION");
@@ -40,6 +40,7 @@ public class OrderResource {
             ArrayList<Item> items = person.getItems();
             command.setItems(items);
         }
+
         command = repo.save(command);
 
         return command;

@@ -6,21 +6,11 @@ package io.hepl.generalservice.Resources;
 
 import io.hepl.generalservice.Models.Cart.Client;
 import io.hepl.generalservice.Models.Order.Command;
-import io.hepl.generalservice.Models.Order.Personne;
-import io.hepl.generalservice.Models.checkout.Item;
-import io.hepl.generalservice.Models.Stock.StockAvailabilityResponse;
-import io.hepl.generalservice.Models.TVA.TvaResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/command")
@@ -35,6 +25,7 @@ public class CommandResources {
     @RequestMapping("/validate/{user}")
     public Command checkout(@PathVariable String user)
     {
+        /*
         Client client = cart.GetClient(user);
         Set<String> keys = client.getItems().keySet();
         io.hepl.generalservice.Models.Commande.Client clientToCheckout = new io.hepl.generalservice.Models.Commande.Client(client.getUserID());
@@ -72,7 +63,8 @@ public class CommandResources {
         HttpEntity<Personne> httpEntity = new HttpEntity<>(personne, headers);
 
         Command commande = restTemplate.postForObject("http://order-service/", httpEntity, Command.class);
-        return commande;
+        return commande;*/
+        return null;
     }
 
     @RequestMapping("/checkout/{id}")
