@@ -9,6 +9,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AuthentificationController.cs" t="Include" />
           <e p="CatalogController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
         </e>
@@ -16,6 +17,9 @@
           <e p="ItemShopHelper.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="Authentification" t="Include">
+            <e p="LoginModel.cs" t="Include" />
+          </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="POCOS" t="Include">
             <e p="ItemShopModel.cs" t="Include" />
@@ -38,6 +42,9 @@
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Authentification" t="Include">
+            <e p="Login.cshtml" t="Include" />
+          </e>
           <e p="Catalog" t="Include">
             <e p="Catalog.cshtml" t="Include" />
           </e>
