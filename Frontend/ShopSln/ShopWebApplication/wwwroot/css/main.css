@@ -1,3 +1,47 @@
+.title-underline {
+  position: absolute;
+  width: 110px;
+  height: 5px;
+  margin: 0 auto;
+  background-color: #71dbe2;
+}
+
+.title-underline-center {
+  width: 200px;
+  height: 5px;
+  margin: 0 auto;
+  background-color: #71dbe2;
+}
+
+.my-btn {
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 15px 5px 15px;
+  width: auto;
+  height: 38px;
+  background-color: #4DD2DB;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 900;
+  border-radius: 50px;
+  text-align: center;
+  transition: 0.3s;
+}
+.my-btn:hover {
+  filter: brightness(110%);
+  background-color: #FFFFFF;
+  color: #4DD2DB;
+  border: 1px solid #4DD2DB;
+  transform: scale(120%, 120%);
+}
+.my-btn:active {
+  transform: scale(128%, 128%);
+  outline: none;
+}
+.my-btn:focus {
+  outline: none;
+}
+
 .my-catalog-cart-container {
   border: none;
   background: transparent;

@@ -10,5 +10,13 @@ namespace ShopWebApplication.Models.Authentification
         [Required]
         [Display(Name = "Mot de passe")]
         public string Password { get; set; }
+        
+        public LoginModel()
+        {
+            Login = null;
+            Password = null;
+        }
+        
+        
     }
 }

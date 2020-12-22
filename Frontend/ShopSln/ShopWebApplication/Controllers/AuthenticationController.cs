@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ShopWebApplication.Models.Authentification;
 
 namespace ShopWebApplication.Controllers
 {
-    public class AuthentificationController : Controller
+    public class AuthenticationController : Controller
     {
         [AllowAnonymous]
         public ActionResult Login()

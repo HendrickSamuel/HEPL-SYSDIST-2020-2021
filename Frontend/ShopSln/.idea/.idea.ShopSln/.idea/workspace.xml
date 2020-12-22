@@ -23,27 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e515ae9a-3305-406f-bbca-f663be667027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthentificationController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Models/Authentification/LoginModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Authentification/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Authentication/Login.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/ShopWebApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/ShopWebApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthentificationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Models/Authentification/LoginModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Models/Authentication/LoginModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Authentification/Login.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Catalog/Catalog.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Catalog/Catalog.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/ShopWebApplication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/ShopWebApplication.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +57,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ShopWebApplication/Controllers/Catalog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EDCC1C9B-42E2-45B6-83A6-1C353936CB63/B/DisplayAttribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -72,19 +66,20 @@
         <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/Catalog.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/_ViewStart.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Startup.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/wwwroot/js/MySlider.js" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/ItemShopHelper.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/wwwroot/img/components/Shopping Cart.svg" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CatalogController.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/ItemShopModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" />
         <option value="$PROJECT_DIR$/ShopWebApplication/wwwroot/js/testScript.js" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/Authentification/Login.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/Authentification/LoginModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthentificationController.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Authentification/Login.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthentificationController.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs" />
       </list>
     </option>
   </component>
@@ -186,26 +181,26 @@
     </state>
     <state x="-1620" y="312" key="EditFileWatcherDialog/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607860614412" />
     <state x="300" y="309" width="665" height="658" key="EditFileWatcherDialog/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1607860065634" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1608637210762">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1608640544008">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607862572422" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608637210762" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1608637210762">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608640544008" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1608640544008">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607862572421" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608637210762" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1608637210762">
+    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608640544008" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1608640544007">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607862572421" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608637210762" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1608637210762">
+    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608640544007" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1608640544008">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607862572421" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608637210762" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608640544008" />
     <state width="1877" height="36" key="GridCell.Tab.1.bottom" timestamp="1607878774255">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -274,10 +269,10 @@
       <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
     <state x="-888" y="255" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607761678424" />
-    <state x="794" y="153" key="RiderGenerateDialog" timestamp="1607940026340">
+    <state x="794" y="153" key="RiderGenerateDialog" timestamp="1608640711242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="153" key="RiderGenerateDialog/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1607940026340" />
+    <state x="794" y="153" key="RiderGenerateDialog/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1608640711242" />
     <state x="-1786" y="179" key="SettingsEditor" timestamp="1607860615871">
       <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
