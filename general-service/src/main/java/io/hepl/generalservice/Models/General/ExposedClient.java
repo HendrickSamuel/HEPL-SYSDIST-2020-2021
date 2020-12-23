@@ -4,12 +4,16 @@
 
 package io.hepl.generalservice.Models.General;
 
+import java.util.List;
+
 public class ExposedClient {
 
     private ExposedCart _cart;
+    private List<ExposedCommand> commands;
     private int _id;
     private String _nom;
     private float _porteFeuille;
+
 
     public ExposedClient() {
     }
@@ -44,5 +48,13 @@ public class ExposedClient {
 
     public void setPorteFeuille(float _porteFeuille) {
         this._porteFeuille = _porteFeuille;
+    }
+
+    public List<ExposedCommand> getCommands() {
+        return commands;
+    }
+
+    public void setCommands(List<ExposedCommand> commands) {
+        this.commands = commands;
     }
 }

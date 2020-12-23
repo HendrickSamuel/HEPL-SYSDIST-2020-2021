@@ -85,4 +85,10 @@ public class CommandResources {
             return res;
         }
     }
+
+    @RequestMapping("list/{user}")
+    public ExposedClient getUsersCommands(@PathVariable String user)
+    {
+        return restTemplate.getForObject("http://order-service/client/"+user, ExposedClient.class);
+    }
 }
