@@ -46,6 +46,32 @@ public class StockResource {
         return null;
     }
 
+    @RequestMapping("remove/{itemId}/{quantity}")
+    public void RemoveItem(@PathVariable String itemId, @PathVariable int quantity)
+    {
+        Item item = getItemById(itemId);
+        if(item != null)
+        {
+            item.setStock(item.getStock() - quantity);
+        }
+        else
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+
+    }
+
+    @RequestMapping("add/{itemId}/{quantity}")
+    public void AddItem(@PathVariable String itemId, @PathVariable int quantity)
+    {
+        Item item = getItemById(itemId);
+        if(item != null)
+        {
+            item.setStock(item.getStock() + quantity);
+        }
+        else
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+    }
+
+
 
 
 

@@ -5,10 +5,18 @@
 package io.hepl.generalservice.Resources;
 
 import io.hepl.generalservice.Models.Cart.Client;
+import io.hepl.generalservice.Models.General.ExposedClient;
+import io.hepl.generalservice.Models.General.ExposedItem;
+import io.hepl.generalservice.Models.General.ResponseMessage;
 import io.hepl.generalservice.Models.Order.Command;
+import io.hepl.generalservice.Models.Order.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,39 +30,17 @@ public class CommandResources {
     @Autowired
     private CartResources cart;
 
-    @RequestMapping("/validate/{user}")
+    @RequestMapping("/preview/{user}")
     public Command checkout(@PathVariable String user)
     {
-        /*
-        Client client = cart.GetClient(user);
-        Set<String> keys = client.getItems().keySet();
-        io.hepl.generalservice.Models.Commande.Client clientToCheckout = new io.hepl.generalservice.Models.Commande.Client(client.getUserID());
-
-        ArrayList<Item> items = new ArrayList<>();
-
-        for (String key : keys)
-        {
-            StockAvailabilityResponse stock = restTemplate.getForObject("http://stock-service/stock/"+key+"/"+client.getItems().get(key), StockAvailabilityResponse.class);
-            if(stock.isAvailable())
-            {
-                io.hepl.generalservice.Models.checkout.Item newItem = new io.hepl.generalservice.Models.checkout.Item();
-                newItem.setWanted(client.getItems().get(key));
-                newItem.setDescription(stock.getItem().getDescription());
-                newItem.setId(stock.getItem().getId());
-                newItem.setPrice(stock.getItem().getPrice());
-
-                TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+stock.getItem().getType(), TvaResponse.class);
-                newItem.setTva(tvaResponse.getTva());
-                items.add(newItem);
-            }
-            else
-            {
-                // generer un warning pour la disponibilité
-            }
+        ExposedClient exposedClient = restTemplate.getForObject("http://general-service/cart/get/"+user, ExposedClient.class);
+        for (ExposedItem item : exposedClient.getCart().getItems()) {
+            restTemplate.getForObject("http://stock-service/remove/"+item.getId()+"/"+item.getWantedQuantity(), Object.class);
         }
 
         Personne personne = new Personne(user);
-        personne.setItems(items);
+        personne.setItems(exposedClient.getCart().getItems());
+        personne.setUserId(exposedClient.getId());
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
@@ -63,23 +49,40 @@ public class CommandResources {
         HttpEntity<Personne> httpEntity = new HttpEntity<>(personne, headers);
 
         Command commande = restTemplate.postForObject("http://order-service/", httpEntity, Command.class);
-        return commande;*/
-        return null;
+        restTemplate.getForObject("http://cart-service/cart/remove/"+personne.getUserName(), Object.class);
+        return commande;
     }
 
     @RequestMapping("/checkout/{id}")
-    public Command CheckoutCommand(@PathVariable int id)
+    public ResponseMessage CheckoutCommand(@PathVariable int id, @RequestParam(required = false) String methode)
     {
+        methode = (methode == null) ? "Normal" : methode;
+
+
         Command commande = restTemplate.getForObject("http://order-service/"+id, Command.class);
-        return commande;
-        //todo: vider le stock
+        if(!commande.getStatus().equalsIgnoreCase("EN ATTENTE DE VALIDATION"))
+        {
+            return new ResponseMessage(false, "Command already checked-out", "ERROR");
+        }
+        restTemplate.getForObject("http://order-service/update/"+id+"/CHECKOUT", Object.class);
 
-        //todo: envoyer sur le service checkout + retour si oui ou non tu as assez d'argent
+        commande.setMode(methode);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<Command> httpEntity = new HttpEntity<>(commande, headers);
+
+        ResponseMessage res = restTemplate.postForObject("http://checkout-service/checkout", httpEntity, ResponseMessage.class);
+        if(res.isSuccess())
+        {
+            return res;
+        }
+        else
+        {
+            restTemplate.getForObject("http://order-service/update/"+id+"/ANULEE", Object.class);
+            return res;
+        }
     }
-
-    //todo: annuler une commande ??
-
-
-    //todo: ajouter une méthode pour avoir acces au portefeuil
-
 }

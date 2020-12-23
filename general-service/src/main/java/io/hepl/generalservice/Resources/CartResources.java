@@ -67,7 +67,7 @@ public class CartResources {
         ArrayList<ExposedItem> cart = exposedClient.getCart().getItems();
 
         ItemListResponse itr = restTemplate.getForObject("http://stock-service/items/", ItemListResponse.class);
-        for (Item item: itr.getItems() ) {
+        for (Item item: itr.getItems()) {
             if(client.getItems().containsKey(item.getId()))
             {
                 ExposedItem exposedItem = new ExposedItem();
@@ -82,7 +82,6 @@ public class CartResources {
             }
         }
 
-        //todo: verifier l'utilisteur info
         io.hepl.generalservice.Models.checkout.Client clientInfo = restTemplate.getForObject("http://checkout-service/users/name/"+client.getUserID(), io.hepl.generalservice.Models.checkout.Client.class);
         if(clientInfo != null)
         {

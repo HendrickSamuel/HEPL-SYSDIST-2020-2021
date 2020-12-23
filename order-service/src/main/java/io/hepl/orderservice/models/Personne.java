@@ -8,14 +8,15 @@ import java.util.ArrayList;
 
 public class Personne {
 
-    private String userID;
+    private String userName;
+    private int userId;
     private ArrayList<Item> items;
 
     public Personne() {
     }
 
     public Personne(String name) {
-        this.userID = name;
+        this.userName = name;
     }
 
     public ArrayList<Item> getItems() {
@@ -26,11 +27,20 @@ public class Personne {
         this.items = items;
     }
 
-    public String getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
