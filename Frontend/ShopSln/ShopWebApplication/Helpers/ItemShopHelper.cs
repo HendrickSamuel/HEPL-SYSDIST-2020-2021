@@ -8,7 +8,7 @@ namespace ShopWebApplication.Helpers
     {
         public ItemShopHelper()
         {
-            
+            Items = new List<ItemShopModel>();
         }
         [JsonPropertyName("items")]
         public List<ItemShopModel> Items { get; set; }

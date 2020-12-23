@@ -30,21 +30,13 @@
   "frameworks": {
     "netcoreapp3.1": {
       "dependencies": {
-        "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+        "Microsoft.AspNet.Mvc": {
           "target": "Package",
-          "version": "[5.0.1, )"
+          "version": "[5.2.7, )"
         },
         "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
           "target": "Package",
           "version": "[3.1.0, )"
-        },
-        "Microsoft.Owin.Host.SystemWeb": {
-          "target": "Package",
-          "version": "[4.1.1, )"
-        },
-        "Microsoft.Owin.Security.Cookies": {
-          "target": "Package",
-          "version": "[4.1.1, )"
         }
       },
       "imports": [

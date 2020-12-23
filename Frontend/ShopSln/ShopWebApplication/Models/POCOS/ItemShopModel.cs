@@ -30,13 +30,4 @@ namespace ShopWebApplication.Models.POCOS
             return $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Type)}: {Type}, {nameof(Stock)}: {Stock}, {nameof(Price)}: {Price}, {nameof(Description)}: {Description}";
         }
     }
-
-    // public enum ItemType
-    // {
-    //     Bouffe,
-    //     Livre,
-    //     Essentiel,
-    //     Bricolage,
-    //     Autre
-    // }
 }

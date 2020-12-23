@@ -9,7 +9,7 @@ namespace ShopWebApplication.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
-            return View();
+            return View("Login", new LoginModel());
         }
     }
 }

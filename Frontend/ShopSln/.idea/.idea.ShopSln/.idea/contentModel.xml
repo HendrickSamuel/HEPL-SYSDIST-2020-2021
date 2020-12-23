@@ -22,7 +22,12 @@
           </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="POCOS" t="Include">
+            <e p="Cart.cs" t="Include" />
+            <e p="Command.cs" t="Include" />
+            <e p="ItemCartModel.cs" t="Include" />
             <e p="ItemShopModel.cs" t="Include" />
+            <e p="LightCart.cs" t="Include" />
+            <e p="User.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -53,6 +58,7 @@
             <e p="Privacy.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
+            <e p="_CartCatalog.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
@@ -95,6 +101,10 @@
           </e>
           <e p="img" t="Include">
             <e p="components" t="Include">
+              <e p="btn-add.svg" t="Include" />
+              <e p="btn-minus.svg" t="Include" />
+              <e p="btn-quantite-bg.svg" t="Include" />
+              <e p="btn-trash.svg" t="Include" />
               <e p="cart.svg" t="Include" />
             </e>
             <e p="item-1.jpg" t="Include" />
@@ -148,28 +158,6 @@
                 <e p="jquery.min.map" t="Include" />
               </e>
               <e p="LICENSE.txt" t="Include" />
-            </e>
-            <e p="jquery-validation" t="Include">
-              <e p="dist" t="Include">
-                <e p="additional-methods.js" t="Include" />
-                <e p="additional-methods.min.js" t="Include" />
-                <e p="jquery.validate.js" t="Include" />
-                <e p="jquery.validate.min.js" t="Include" />
-              </e>
-              <e p="LICENSE.md" t="Include" />
-            </e>
-            <e p="jquery-validation-unobtrusive" t="Include">
-              <e p="jquery.validate.unobtrusive.js" t="Include" />
-              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
-              <e p="LICENSE.txt" t="Include" />
-            </e>
-            <e p="swipper" t="Include">
-              <e p="css" t="Include">
-                <e p="swiper.min.css" t="Include" />
-              </e>
-              <e p="js" t="Include">
-                <e p="swiper.min.js" t="Include" />
-              </e>
             </e>
           </e>
         </e>
