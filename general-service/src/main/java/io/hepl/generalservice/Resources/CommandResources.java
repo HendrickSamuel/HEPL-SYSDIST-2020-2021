@@ -13,12 +13,14 @@ import io.hepl.generalservice.Models.Order.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/command")
@@ -34,8 +36,13 @@ public class CommandResources {
     public Command checkout(@PathVariable String user)
     {
         ExposedClient exposedClient = restTemplate.getForObject("http://general-service/cart/get/"+user, ExposedClient.class);
+        if(exposedClient.getCart() == null)
+        {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+        }
+
         for (ExposedItem item : exposedClient.getCart().getItems()) {
-            restTemplate.getForObject("http://stock-service/remove/"+item.getId()+"/"+item.getWantedQuantity(), Object.class);
+            restTemplate.getForObject("http://stock-service/stock/remove/"+item.getId()+"/"+item.getWantedQuantity(), Object.class);
         }
 
         Personne personne = new Personne(user);
