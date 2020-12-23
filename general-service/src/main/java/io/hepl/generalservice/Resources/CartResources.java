@@ -12,11 +12,13 @@ import io.hepl.generalservice.Models.Stock.Item;
 import io.hepl.generalservice.Models.Stock.ItemListResponse;
 import io.hepl.generalservice.Models.TVA.TvaResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -47,35 +49,53 @@ public class CartResources {
     @RequestMapping("/get/{user}")
     public ExposedClient GetClient(@PathVariable String user)
     {
-        Client client = restTemplate.getForObject("http://cart-service/cart/list/"+user, Client.class);
-        //todo: verifier que le cart ne soit pas vide
+        Client client;
+        try
+        {
+            client = restTemplate.getForObject("http://cart-service/cart/list/"+user, Client.class);
+        }
+        catch (HttpClientErrorException.NotFound ex)
+        {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "entity not found"
+            );
+        }
 
         ExposedClient exposedClient = new ExposedClient();
-        exposedClient.set_cart(new ExposedCart());
+        exposedClient.setCart(new ExposedCart());
 
-        ArrayList<ExposedItem> cart = exposedClient.get_cart().get_items();
+        ArrayList<ExposedItem> cart = exposedClient.getCart().getItems();
 
         ItemListResponse itr = restTemplate.getForObject("http://stock-service/items/", ItemListResponse.class);
         for (Item item: itr.getItems() ) {
             if(client.getItems().containsKey(item.getId()))
             {
                 ExposedItem exposedItem = new ExposedItem();
-                exposedItem.set_id(item.getId());
-                exposedItem.set_price(item.getPrice());
-                exposedItem.set_totalQuantity(item.getStock());
-                exposedItem.set_wantedQuantity(client.getItems().get(item.getId()));
+                exposedItem.setId(item.getId());
+                exposedItem.setPrice(item.getPrice());
+                exposedItem.setTotalQuantity(item.getStock());
+                exposedItem.setWantedQuantity(client.getItems().get(item.getId()));
                 TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
-                exposedItem.set_tva(tvaResponse.getTva());
-                exposedItem.set_type(item.getType());
+                exposedItem.setTva(tvaResponse.getTva());
+                exposedItem.setType(item.getType());
                 cart.add(exposedItem);
             }
         }
 
+        //todo: verifier l'utilisteur info
         io.hepl.generalservice.Models.checkout.Client clientInfo = restTemplate.getForObject("http://checkout-service/users/name/"+client.getUserID(), io.hepl.generalservice.Models.checkout.Client.class);
-        exposedClient.set_id(clientInfo.getId());
-        exposedClient.set_nom(clientInfo.getNom());
-        exposedClient.set_porteFeuille(clientInfo.getPorteFeuille());
-
+        if(clientInfo != null)
+        {
+            exposedClient.setId(clientInfo.getId());
+            exposedClient.setNom(clientInfo.getNom());
+            exposedClient.setPorteFeuille(clientInfo.getPorteFeuille());
+        }
+        else
+        {
+            exposedClient.setId(-1);
+            exposedClient.setNom("visiteur");
+            exposedClient.setPorteFeuille(-1);
+        }
 
         return exposedClient;
     }

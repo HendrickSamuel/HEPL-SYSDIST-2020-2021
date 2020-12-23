@@ -5,6 +5,7 @@
 package io.hepl.orderservice.resources;
 
 import io.hepl.orderservice.models.Command;
+import io.hepl.orderservice.models.CommandList;
 import io.hepl.orderservice.models.Item;
 import io.hepl.orderservice.models.Personne;
 import io.hepl.orderservice.models.jpa.CommandRepository;
@@ -15,7 +16,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -28,10 +31,10 @@ public class OrderResource {
     @Autowired
     private ItemRepository repository;
 
-    @PostMapping(
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public Command request(@RequestBody Personne person, @PathVariable boolean preview)
+    @PostMapping(path = "",
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE})
+    public Command request(@RequestBody Personne person)
     {
         Command command = new Command(person.getUserID());
         command.setStatus("EN ATTENTE DE VALIDATION");
@@ -56,5 +59,17 @@ public class OrderResource {
         return commandToReturn;
         else
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+    }
+
+    @RequestMapping("/remove/{commande}")
+    public void removeCommande(@PathVariable int commande)
+    {
+        repo.deleteById(commande);
+    }
+
+    @RequestMapping("/client/{client}")
+    public CommandList getUserCommands(@PathVariable String client)
+    {
+        return new CommandList(repo.findByClient(client));
     }
 }

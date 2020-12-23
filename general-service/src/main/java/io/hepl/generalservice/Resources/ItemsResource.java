@@ -23,5 +23,4 @@ public class ItemsResource {
         ItemListResponse itr = restTemplate.getForObject("http://stock-service/items/", ItemListResponse.class);
         return itr;
     }
-
 }

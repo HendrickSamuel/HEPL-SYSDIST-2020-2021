@@ -5,6 +5,7 @@
 package io.hepl.orderservice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 
@@ -42,6 +43,14 @@ public class Item {
         this.commande = commande;
     }
 
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
+
     public String getId() {
         return id;
     }
@@ -54,6 +63,7 @@ public class Item {
         return quantity;
     }
 
+    @JsonProperty("wantedQuantity")
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
@@ -62,38 +72,17 @@ public class Item {
         return unitPrice;
     }
 
-    public float getTotalPrice()
-    {
-        return getUnitPrice()*getQuantity();
-    }
-
+    @JsonProperty("price")
     public void setUnitPrice(float unitPrice) {
         this.unitPrice = unitPrice;
-    }
-
-    public void setTvaPrice(float price) {
-        this.tvaPrice = price;
     }
 
     public float getTvaPrice() {
         return tvaPrice;
     }
 
-    public void setWanted(int wanted) {
-        this.quantity = wanted;
+    @JsonProperty("totalTVAPrice")
+    public void setTvaPrice(float tvaPrice) {
+        this.tvaPrice = tvaPrice;
     }
-
-    @JsonIgnore
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    public void setPrice(float price) {
-        this.unitPrice = price;
-    }
-
 }

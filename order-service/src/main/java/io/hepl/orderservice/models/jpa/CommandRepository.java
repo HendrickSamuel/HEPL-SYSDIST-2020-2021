@@ -10,9 +10,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface CommandRepository extends CrudRepository<Command, Long> {
+public interface CommandRepository extends CrudRepository<Command, Integer> {
     List<Command> findByClient(String user);
-
     Command findByCommande(int id);
 }
 

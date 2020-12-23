@@ -14,35 +14,35 @@ public class ExposedClient {
     public ExposedClient() {
     }
 
-    public ExposedCart get_cart() {
+    public ExposedCart getCart() {
         return _cart;
     }
 
-    public void set_cart(ExposedCart _cart) {
+    public void setCart(ExposedCart _cart) {
         this._cart = _cart;
     }
 
-    public int get_id() {
+    public int getId() {
         return _id;
     }
 
-    public void set_id(int _id) {
+    public void setId(int _id) {
         this._id = _id;
     }
 
-    public String get_nom() {
+    public String getNom() {
         return _nom;
     }
 
-    public void set_nom(String _nom) {
+    public void setNom(String _nom) {
         this._nom = _nom;
     }
 
-    public float get_porteFeuille() {
+    public float getPorteFeuille() {
         return _porteFeuille;
     }
 
-    public void set_porteFeuille(float _porteFeuille) {
+    public void setPorteFeuille(float _porteFeuille) {
         this._porteFeuille = _porteFeuille;
     }
 }

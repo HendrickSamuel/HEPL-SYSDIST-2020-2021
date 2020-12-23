@@ -15,51 +15,51 @@ public class ExposedItem {
     public ExposedItem() {
     }
 
-    public String get_id() {
+    public String getId() {
         return _id;
     }
 
-    public void set_id(String _id) {
+    public void setId(String _id) {
         this._id = _id;
     }
 
-    public int get_totalQuantity() {
+    public int getTotalQuantity() {
         return _totalQuantity;
     }
 
-    public void set_totalQuantity(int _totalQuantity) {
+    public void setTotalQuantity(int _totalQuantity) {
         this._totalQuantity = _totalQuantity;
     }
 
-    public int get_wantedQuantity() {
+    public int getWantedQuantity() {
         return _wantedQuantity;
     }
 
-    public void set_wantedQuantity(int _wantedQuantity) {
+    public void setWantedQuantity(int _wantedQuantity) {
         this._wantedQuantity = _wantedQuantity;
     }
 
-    public float get_tva() {
+    public float getTva() {
         return _tva;
     }
 
-    public void set_tva(float _tva) {
+    public void setTva(float _tva) {
         this._tva = _tva;
     }
 
-    public float get_price() {
+    public float getPrice() {
         return _price;
     }
 
-    public void set_price(float _price) {
+    public void setPrice(float _price) {
         this._price = _price;
     }
 
-    public String get_type() {
+    public String getType() {
         return _type;
     }
 
-    public void set_type(String _type) {
+    public void setType(String _type) {
         this._type = _type;
     }
 

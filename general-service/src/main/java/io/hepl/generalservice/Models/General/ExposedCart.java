@@ -14,27 +14,27 @@ public class ExposedCart {
         _items = new ArrayList<>();
     }
 
-    public ArrayList<ExposedItem> get_items() {
+    public ArrayList<ExposedItem> getItems() {
         return _items;
     }
 
-    public void set_items(ArrayList<ExposedItem> _items) {
+    public void setItems(ArrayList<ExposedItem> _items) {
         this._items = _items;
     }
 
-    public float get_total()
+    public float getTotal()
     {
         float price = 0;
-        for (ExposedItem exposedItem: get_items()) {
+        for (ExposedItem exposedItem: getItems()) {
             price += exposedItem.getTotalPrice();
         }
         return price;
     }
 
-    public float get_totalTVA()
+    public float getTotalTVA()
     {
         float price = 0;
-        for (ExposedItem exposedItem: get_items()) {
+        for (ExposedItem exposedItem: getItems()) {
             price += exposedItem.getTotalTVAPrice();
         }
         return price;
