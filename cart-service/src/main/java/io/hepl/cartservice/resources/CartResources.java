@@ -77,8 +77,19 @@ public class CartResources {
         }
     }
 
+    @RequestMapping("/remove/{user}")
+    public void removeCart(@PathVariable String user)
+    {
+        for(Client client : clients)
+        {
+            if(client.getUserID().equals(user))
+                clients.remove(client);
+            break;
+        }
+    }
+
     @RequestMapping("/list/{user}")
-    public Client removeItemToCart(@PathVariable String user)
+    public Client getUsersCart(@PathVariable String user)
     {
         for(Client client : clients)
         {

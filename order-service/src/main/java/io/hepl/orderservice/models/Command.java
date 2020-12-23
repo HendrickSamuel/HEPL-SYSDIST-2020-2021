@@ -20,6 +20,7 @@ public class Command {
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Item> items;
     private String client;
+    private int clientId;
     private String status; // PREPARATION / EXPEDIEE / RECEPTIONNEE
 
     public Command(String client) {
@@ -70,5 +71,13 @@ public class Command {
             total += item.getTvaPrice();
         }
         return total;
+    }
+
+    public int getUserId() {
+        return clientId;
+    }
+
+    public void setUserId(int userId) {
+        this.clientId = userId;
     }
 }

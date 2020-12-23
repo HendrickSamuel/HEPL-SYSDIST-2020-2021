@@ -6,20 +6,22 @@
 
 #### Architecture proposée au prof et acceptée
 
-![](./architecture.jpg)
+![](./updated-architecture.jpg)
 
 La partie GRPC et SOAP sont **optionnels** selon le temps restant. 
 
 #### micro-service GENERAL
 
-| fonctionnalité      | requête (url)                                              | note                                                   | micro-service source                  |
-| :------------------ | ---------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------- |
-| getAllSellableItems | http://localhost:8080/items/                               | -                                                      | micro-service **stock**               |
-| addItemToCart       | http://localhost:8080/cart/add/{user}/{item}/{quantity}    | ne retourne rien pour le moment                        | micro-service **cart**                |
-| removeItemFromCart  | http://localhost:8080/cart/remove/{user}/{item}/{quantity} | ne retourne rien pour le moment                        | micro-service **cart**                |
-| getUsersCart        | http://localhost:8080/cart/get/{user}                      | -                                                      | micro-service **cart**                |
-| /                   | http://localhost:8080/command/validate/{user}              | valide le cart -> renvoi une commande                  | micro-service **order**               |
-| /                   | http://localhost:8080/command/checkout/{commandId}         | valide la commande et retire l'argent de l'utilisateur | micro-service **order** + **checkou** |
+| fonctionnalité      | requête (url)                                              | note                                                         | micro-service source                  |
+| :------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------- |
+| getAllSellableItems | http://localhost:8080/items/                               | -                                                            | micro-service **stock**               |
+| addItemToCart       | http://localhost:8080/cart/add/{user}/{item}/{quantity}    | ne retourne rien pour le moment                              | micro-service **cart**                |
+| removeItemFromCart  | http://localhost:8080/cart/remove/{user}/{item}/{quantity} | ne retourne rien pour le moment                              | micro-service **cart**                |
+| getUsersCart        | http://localhost:8080/cart/get/{user}                      | -                                                            | micro-service **cart**                |
+| previewCommand      | http://localhost:8080/command/preview/{user}               | valide le cart -> renvoi une commande à valider              | micro-service **order**               |
+| ValidateCommand     | http://localhost:8080/command/checkout/{Commandid}         | valide la commande et retire l'argent de l'utilisateur **+** renvoi un objet message avec u | micro-service **order** + **checkou** |
+| CheckUsersCommand   | http://localhost:8080/command/list/{userName}              |                                                              | micro-service **order**               |
+| ??? **LOGIN**       | ???                                                        | ???                                                          | ???                                   |
 
 
 
@@ -52,4 +54,8 @@ La partie GRPC et SOAP sont **optionnels** selon le temps restant.
 | listItems      | http://service/cart/list/{user}                       |                        |
 
 
+
+
+
+**AJOUTER LE RESTE DES MICRO-SERVICES**
 

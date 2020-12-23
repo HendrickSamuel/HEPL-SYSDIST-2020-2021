@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ShopWebApplication.Helpers;
 using ShopWebApplication.Models.POCOS;
-using Controller = Microsoft.AspNetCore.Mvc.Controller;
 
 namespace ShopWebApplication.Controllers
 {
@@ -29,20 +25,43 @@ namespace ShopWebApplication.Controllers
         #endregion
        
         // GET
-        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [HttpGet]
         public IActionResult MyCatalog()
         {
             ItemShopHelper itemShopHelper = GetItems();
-            return View("Catalog", itemShopHelper);
+            Cart myCart = GetCart("samuel");
+            
+            return View("Catalog", new DataCatalogHelper(){IShopHelper = itemShopHelper, MyCart = myCart});
         }
-        [Microsoft.AspNetCore.Mvc.HttpPost("[controller]/OnSelectedItem/{idItem}")]
+        [HttpPost("[controller]/OnSelectedItem/{idItem}")]
         public IActionResult OnSelectedItem([FromRoute] string idItem)
         {
             Console.WriteLine(idItem);
             AddItemToCart(idItem, "samuel", 1);
-            return View("Catalog", GetItems());
+            return View("Catalog", new DataCatalogHelper(){IShopHelper = GetItems(), MyCart = GetCart("samuel")});
         }
 
+        private Cart GetCart(String username)
+        {
+            Cart myCart = new Cart();
+            try
+            {
+                _client.DefaultRequestHeaders.Accept.Clear();
+                _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var reponse = _client.GetAsync($"http://localhost:8080/cart/get/{username}").Result;
+                if (reponse.IsSuccessStatusCode)
+                {
+                    var jsonString = reponse.Content.ReadAsStringAsync().Result;
+                    myCart = JsonSerializer.Deserialize<User>(jsonString).MyCart;
+                }
+            }
+            catch(Exception e)
+            {
+                return new Cart();
+            }
+            return myCart;
+        }
         private ItemShopHelper GetItems()
         {
             ItemShopHelper itemShopHelper = new ItemShopHelper();

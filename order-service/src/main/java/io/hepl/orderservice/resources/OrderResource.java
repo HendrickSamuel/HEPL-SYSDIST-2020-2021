@@ -36,8 +36,9 @@ public class OrderResource {
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public Command request(@RequestBody Personne person)
     {
-        Command command = new Command(person.getUserID());
+        Command command = new Command(person.getUserName());
         command.setStatus("EN ATTENTE DE VALIDATION");
+        command.setUserId(person.getUserId());
         if(person.getItems() != null)
         {
             ArrayList<Item> items = person.getItems();
@@ -49,7 +50,13 @@ public class OrderResource {
         return command;
     }
 
-    //todo: ajouter une méthode pour update le status
+    @RequestMapping("update/{commande}/{state}")
+    public void updateState(@PathVariable int commande, @PathVariable String state)
+    {
+        Command commandToReturn = repo.findByCommande(commande);
+        commandToReturn.setStatus(state);
+        repo.save(commandToReturn);
+    }
 
     @RequestMapping("{commande}")
     public Command getCommande(@PathVariable int commande)

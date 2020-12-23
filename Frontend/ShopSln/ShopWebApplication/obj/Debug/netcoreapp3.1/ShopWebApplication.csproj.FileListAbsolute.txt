@@ -351,13 +351,6 @@ C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopW
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\refs\System.ComponentModel.Annotations.dll
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\refs\System.Diagnostics.DiagnosticSource.dll
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CartCatalog.cshtml.g.cs
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
-C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.csproj.CoreCompileInputs.cache
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.MvcApplicationPartsAssemblyInfo.cs
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.MvcApplicationPartsAssemblyInfo.cache

@@ -15,6 +15,8 @@ public class Command {
     private List<Item> items;
     private String client;
     private String status; // PREPARATION / EXPEDIEE / RECEPTIONNEE
+    private String mode;
+    private int userId;
 
     public Command(String client) {
         this.client = client;
@@ -64,5 +66,21 @@ public class Command {
             total += item.getTotalPrice();
         }
         return total;
+    }
+
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

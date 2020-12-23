@@ -248,6 +248,31 @@
 .card-item .card-item-footer .card-item-btn-add:focus {
   outline: none;
 }
+.card-item .card-item-footer .card-item-btn-add-disabled {
+  font-size: 18px;
+  width: 105.26px;
+  height: 38px;
+  background-color: darkgray;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 900;
+  border-radius: 50px;
+  text-align: center;
+  transition: 0.3s;
+}
+.card-item .card-item-footer .card-item-btn-add-disabled:hover {
+  background-color: #FFFFFF;
+  color: darkgray;
+  border: 1px solid darkgray;
+  transform: scale(120%, 120%);
+}
+.card-item .card-item-footer .card-item-btn-add-disabled:active {
+  transform: scale(128%, 128%);
+  outline: none;
+}
+.card-item .card-item-footer .card-item-btn-add-disabled:focus {
+  outline: none;
+}
 
 .swiper-container {
   width: 100%;

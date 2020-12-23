@@ -1,22 +1,21 @@
-﻿@model ShopWebApplication.Helpers.ItemShopHelper;
-@using System.Web.Mvc.Ajax;
-@using System.Web.Mvc
+﻿@using System.Linq
+@model ShopWebApplication.Helpers.DataCatalogHelper;
 @{
     ViewData["Title"] = "Catalog";
     Layout = "_Layout";
-    AjaxOptions ajaxOptions = new AjaxOptions()
-    {
-        HttpMethod = "POST",
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "current-cart-item"
-    };
+    // AjaxOptions ajaxOptions = new AjaxOptions()
+    // {
+    //     HttpMethod = "POST",
+    //     InsertionMode = InsertionMode.Replace,
+    //     UpdateTargetId = "current-cart-item"
+    // };
 }
 
 @*<script src="~/js/testScript.js" type="text/javascript"></script>*@
 <section class=" mt-5 ">
     <div class="mt-4">
         @* Partial View : The current cart *@
-        @await Html.PartialAsync("~/Views/Shared/_CartCatalog.cshtml") <!-- OR : <partial name="~/Views/Shared/_CartCatalog.cshtml" />-->
+        @await Html.PartialAsync("~/Views/Shared/_CartCatalog.cshtml", Model.MyCart) <!-- OR : <partial name="~/Views/Shared/_CartCatalog.cshtml" />-->
         @*<div class="row mb-5 text-right">
             <div class="col-12">
                 <button class="my-catalog-cart-container" onclick="AlertName(`@Model.Items.First()`)">
@@ -41,8 +40,8 @@
             @Html.AntiForgeryToken();
             @*<form action="" method="post">*@
     <div class="row justify-content-center">
-         <input name="nbItemDispo" value="@(@Model.Items.Count)" type="hidden" />
-        @foreach (var item in @Model.Items)
+         <input name="nbItemDispo" value="@(Model.IShopHelper.Items.Count)" type="hidden" />
+        @foreach (var item in @Model.IShopHelper.Items)
         {
             <div class="col-12 col-lg-6 col-xl-4">
                 <div id="" class="card-item">
@@ -90,7 +89,22 @@
                         <div class="row">
                             <!-- Bouton Add -->
                             <div class="col-12">
-                                <button type="submit" formaction="/Catalog/OnSelectedItem/@(item.Id)" onclick="" class="card-item-btn-add">Add</button>
+                                 @if(Model.MyCart.Items.Exists(itemCart => itemCart.Id == item.Id))
+                                 {
+                                     var itemCartModel = Model.MyCart.Items.Where(itemCart => itemCart.Id == item.Id).FirstOrDefault();
+                                     if (itemCartModel.Quantity < itemCartModel.Stock)
+                                     {
+                                         <button type="submit" formaction="/Catalog/OnSelectedItem/@(item.Id)" onclick="" class="card-item-btn-add">Add</button>
+                                     }
+                                     else
+                                     {
+                                         <button type="submit"  disabled onclick="" class="card-item-btn-add-disabled">Add</button>
+                                     }
+                                 }
+                                 else
+                                 {
+                                     <button type="submit" formaction="/Catalog/OnSelectedItem/@(item.Id)" onclick="" class="card-item-btn-add">Add</button>
+                                 }
                             </div>
                         </div>
                     </div>

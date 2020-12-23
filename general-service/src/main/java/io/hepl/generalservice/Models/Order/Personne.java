@@ -4,35 +4,44 @@
 
 package io.hepl.generalservice.Models.Order;
 
-import io.hepl.generalservice.Models.checkout.Item;
+import io.hepl.generalservice.Models.General.ExposedItem;
 
 import java.util.ArrayList;
 
 public class Personne {
 
-    private String userID;
-    private ArrayList<Item> items;
+    private String userName;
+    private int userId;
+    private ArrayList<ExposedItem> items;
 
     public Personne() {
     }
 
     public Personne(String name) {
-        this.userID = name;
+        this.userName = name;
     }
 
-    public ArrayList<Item> getItems() {
+    public ArrayList<ExposedItem> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Item> items) {
+    public void setItems(ArrayList<ExposedItem> items) {
         this.items = items;
     }
 
-    public String getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

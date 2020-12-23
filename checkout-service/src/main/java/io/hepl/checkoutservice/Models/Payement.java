@@ -20,9 +20,14 @@ public class Payement {
 
     private int commande;
 
-    public Payement(Client client, int commande) {
+    private float total;
+    private float frais;
+
+    public Payement(Client client, int commande, float total, float frais) {
         this.client = client;
         this.commande = commande;
+        this.total = total;
+        this.frais = frais;
     }
 
     public Payement() {
@@ -51,5 +56,18 @@ public class Payement {
 
     public void setCommande(int commande) {
         this.commande = commande;
+    }
+
+    public float getFrais() {
+        return frais;
+    }
+
+    public void setFrais(float frais) {
+        this.frais = frais;
+    }
+
+    public float getTotal()
+    {
+        return total+frais;
     }
 }
