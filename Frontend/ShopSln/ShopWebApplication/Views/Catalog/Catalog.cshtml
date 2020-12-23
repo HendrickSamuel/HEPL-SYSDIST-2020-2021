@@ -1,13 +1,23 @@
 ﻿@model ShopWebApplication.Helpers.ItemShopHelper;
-
+@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc
 @{
     ViewData["Title"] = "Catalog";
     Layout = "_Layout";
+    AjaxOptions ajaxOptions = new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "current-cart-item"
+    };
 }
- <script src="~/js/testScript.js" type="text/javascript"></script>
+
+@*<script src="~/js/testScript.js" type="text/javascript"></script>*@
 <section class=" mt-5 ">
     <div class="mt-4">
-        <div class="row mb-5 text-right">
+        @* Partial View : The current cart *@
+        @await Html.PartialAsync("~/Views/Shared/_CartCatalog.cshtml") <!-- OR : <partial name="~/Views/Shared/_CartCatalog.cshtml" />-->
+        @*<div class="row mb-5 text-right">
             <div class="col-12">
                 <button class="my-catalog-cart-container" onclick="AlertName(`@Model.Items.First()`)">
                     <div class="my-catalog-cart">
@@ -20,72 +30,77 @@
                     </div>
                 </button>
             </div>
-        </div>
+        </div>*@
         <div class="row">
             <div class="col-12">
                 <h1 class="catalog-title text-center">Nos produits</h1>
             </div>
         </div>
-        <form action="" method="post">
-            <div class="row justify-content-center">
-                @foreach (var item in @Model.Items)
-                {
-                    <div class="col-12 col-lg-6 col-xl-4">
-                        <div id="" class="card-item">
-                            <!-- Cercle avec le stock -->
-                            <div class="card-item-stock-container">
-                                <div class="card-item-stock-bg">
-                                    <div class="card-item-stock">
-                                        <p><span>@item.Stock</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-item-header">
-                                <div class="row">
-                                    <!-- Image -->
-                                    <div class="col-12">
-                                        <img class="card-item-img" src="/img/@(item.Id).jpg" alt="card-img" onerror="this.onerror=null;this.src='/img/not-found.jpg'"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-item-body">
-                                <div class="row">
-                                    <!--Categorie +  Nom + Decription + Prix -->
-                                    <div class="col-12">
-                                        <p class="card-item-type">@(item.Type)</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h3 class="card-item-name">@(item.Name)</h3>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p class="card-item-desc">@(item.Description)</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p class="card-item-price"><span>@(item.Price)</span> €</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-item-footer">
-                                <div class="row">
-                                    <!-- Bouton Add -->
-                                    <div class="col-12">
-                                        <button type="submit" name="@(item.Id)" class="card-item-btn-add">Add</button>
-                                    </div>
-                                </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken();
+            @*<form action="" method="post">*@
+    <div class="row justify-content-center">
+         <input name="nbItemDispo" value="@(@Model.Items.Count)" type="hidden" />
+        @foreach (var item in @Model.Items)
+        {
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div id="" class="card-item">
+                    <!-- Cercle avec le stock -->
+                    <div class="card-item-stock-container">
+                        <div class="card-item-stock-bg">
+                            <div class="card-item-stock">
+                                <p><span>@item.Stock</span></p>
                             </div>
                         </div>
                     </div>
-                }
+                    <div class="card-item-header">
+                        <div class="row">
+                            <!-- Image -->
+                            <div class="col-12">
+                                <img class="card-item-img" src="/img/@(item.Id).jpg" alt="card-img" onerror="this.onerror=null;this.src='/img/not-found.jpg'" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-item-body">
+                        <div class="row">
+                            <!--Categorie +  Nom + Decription + Prix -->
+                            <div class="col-12">
+                                <p class="card-item-type">@(item.Type)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 class="card-item-name">@(item.Name)</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="card-item-desc">@(item.Description)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="card-item-price"><span>@(item.Price)</span> €</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="card-item-footer">
+                        <div class="row">
+                            <!-- Bouton Add -->
+                            <div class="col-12">
+                                <button type="submit" formaction="/Catalog/OnSelectedItem/@(item.Id)" onclick="" class="card-item-btn-add">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
+        }
+
+    </div>
+        @*</form>*@
+        }
     </div>
 </section>
 <script src="~/js/MySlider.js" asp-append-version="true"></script>

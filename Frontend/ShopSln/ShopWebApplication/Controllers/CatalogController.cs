@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.Web.Mvc;
+using System.Web.Mvc.Ajax;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ShopWebApplication.Helpers;
 using ShopWebApplication.Models.POCOS;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
 
 namespace ShopWebApplication.Controllers
 {
@@ -24,14 +27,28 @@ namespace ShopWebApplication.Controllers
             _client = new HttpClient();
         }
         #endregion
-        
+       
         // GET
-        public IActionResult Catalog()
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        public IActionResult MyCatalog()
+        {
+            ItemShopHelper itemShopHelper = GetItems();
+            return View("Catalog", itemShopHelper);
+        }
+        [Microsoft.AspNetCore.Mvc.HttpPost("[controller]/OnSelectedItem/{idItem}")]
+        public IActionResult OnSelectedItem([FromRoute] string idItem)
+        {
+            Console.WriteLine(idItem);
+            AddItemToCart(idItem, "samuel", 1);
+            return View("Catalog", GetItems());
+        }
+
+        private ItemShopHelper GetItems()
         {
             ItemShopHelper itemShopHelper = new ItemShopHelper();
             try
             {
-                _client.DefaultRequestHeaders.Accept.Clear();  
+                _client.DefaultRequestHeaders.Accept.Clear();
                 _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var reponse = _client.GetAsync("http://localhost:8080/items/").Result;
@@ -41,18 +58,28 @@ namespace ShopWebApplication.Controllers
                     var jsonString = reponse.Content.ReadAsStringAsync().Result;
                     //Console.WriteLine(jsonString);
                     itemShopHelper = JsonSerializer.Deserialize<ItemShopHelper>(jsonString);
-                    if (itemShopHelper.Items.Count > 0)
-                    {
-                        return View(itemShopHelper);
-                    }
                 }
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                return new ItemShopHelper();
             }
-            return View(itemShopHelper);
+            return itemShopHelper;
         }
+
+        private bool AddItemToCart(string idItem, string user, int quantity)
+        {
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var reponse = _client.GetAsync($"http://localhost:8080/cart/add/{user}/{idItem}/{quantity}").Result;
+            
+            if (reponse.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            return false;
+        }
+        
     }
 }
