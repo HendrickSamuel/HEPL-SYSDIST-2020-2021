@@ -1,0 +1,95 @@
+﻿@using System.Linq
+@using System.Globalization
+@using ShopWebApplication.Helpers;
+@model ShopWebApplication.Models.POCOS.Cart
+
+@{
+    ViewData["Title"] = "Cart";
+    Layout = ViewData["Layout"] as String;
+    int i = 0;
+}
+
+<section class="mt-5">
+    <div class="mt-4 container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="catalog-title text-center">Votre panier</h1>
+            </div>
+        </div>
+        @if (Model.TotalElement > 0)
+        {
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table cart-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Nom</th>
+                                <th>Quantité</th>
+                                <th>Prix unitaire</th>
+                                <th>Prix Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <th class="center-cell">@(++i)</th>
+                                    <td class="center-cell"><img class="card-table-img" src="/img/@(item.Id).jpg" alt="card-img" onerror="this.onerror=null;this.src='/img/not-found.jpg'" /></td>
+                                    <td class="center-cell">@(item.Name)</td>
+                                    <td class="center-cell">@(item.Quantity)</td>
+                                    <td class="center-cell">@($"{item.PriceTva:0.##}") €</td>
+                                    <td class="center-cell">@($"{item.TotalPriceTva:0.##}") €</td>
+                                    @using (Html.BeginForm("OnSelectedItem", "Cart", FormMethod.Post))
+                                    {
+                                        <input type="hidden" name="id-item" value="@item.Id">
+                                        <input type="hidden" name="quantity" value="@item.Quantity">
+                                        <td class="center-cell"><button type="submit" id="btn-@(item.Id)" class="my-btn">Supprimer l'article</button></td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-2 mt-lg-5 text-center text-lg-right">
+                <div class="col-12">
+                    <p class="prix-total">Prix total (@Model.TotalElement articles) : <span>@($"{Model.TotalTva:0.##}")</span> €</p>
+                </div>
+            </div>
+            @if (((String)ViewData["Role"]) != "Visitor")
+            {
+                <div class="row mt-5 text-center text-lg-right">
+                    <div class="col-12">
+                        <a id="btn-payement" href="@(Url.Action("Preview", "Bill"))" class="my-btn">Passez au payement</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row mt-5 text-center text-lg-right">
+                    <div class="col-12">
+                        <div class="alert alert-info" role="alert">Pour passer au payement, veuillez vous connecter</div>
+                    </div>
+                    <div class="col-12">
+                        <a id="btn-login" href="@(Url.Action("Login", "Authentication"))" class="my-btn">Se connecter</a>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="cart-empty">
+                    <div class="alert-info">
+                        <p class="cart-empty-info">Il n'y a aucun articles dans votre panier</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>

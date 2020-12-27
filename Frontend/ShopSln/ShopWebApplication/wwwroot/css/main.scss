@@ -1,4 +1,8 @@
-﻿.title-underline{
+﻿a{
+    text-decoration: none;
+}
+
+.title-underline{
   position: absolute;
   width: 110px;
   height: 5px;
@@ -12,19 +16,56 @@
   margin: 0 auto;
   background-color: lighten($color: #4DD2DB, $amount: 8.5);
 }
+
+
+.delivery-mode-container {
+    outline: none;
+    color: lightgray;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    .delivery-mode {
+        opacity: 0.7;
+        transition: .3s;
+        border-width: .25rem;
+        border-style: solid;
+        border-color: lightgray;
+        display: inline-block;
+        margin-right: 15px;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        padding: 3px 12px;
+
+      &:hover {
+            opacity: 0.85;
+            transform: scale(1.25);
+        }
+    }
+
+    input[type="radio"]:checked + .delivery-mode {
+        opacity: 1;
+        color: #4DD2DB;
+        border-color: #4DD2DB;
+        transform: scale(1.35);
+    }
+}
+
 .my-btn{
   font-size: 18px;
   display: inline-block;
   padding: 5px 15px 5px 15px; // H D B G
   width: auto;
   height: 38px;
-  background-color: #4DD2DB;
+  background-color: #4d71db;
   color: #FFFFFF;
   border: none;
   font-weight: 900;
   border-radius: 50px;
   text-align: center;
   transition: .3s;
+  text-decoration: none;
   &:hover{
     filter: brightness(110%);
     background-color: #FFFFFF;
@@ -103,7 +144,6 @@
     transform: scale(110%);
   }
 }
-
 
 .catalog-title{
   letter-spacing: 2.2rem;
@@ -231,6 +271,25 @@
       }
       //position: absolute;
     }
+    .quantity-input{
+      position: relative;
+      top: 4.5rem;
+      outline: none;
+      font-family: "Sansation", sans-serif;
+      // appearance: textfield;
+      display: inline-block;
+      z-index: 1000;
+      width: auto;
+
+      padding-top: 1px;
+      padding-bottom: 1px;
+      color: #000;
+      border-radius: 15px;
+      border-width: .15rem;
+      border-style: solid;
+      border-color: lightgrey;
+      text-align: center;
+    }
   }
   .card-item-footer{
     position: absolute;
@@ -264,60 +323,56 @@
         outline: none;
       }
     }
+    .card-item-btn-add-disabled{
+      font-size: 18px;
+
+      width: 105.26px;
+      height: 38px;
+      background-color: darkgray;
+      color: #FFFFFF;
+      border: none;
+      font-weight: 900;
+      border-radius: 50px;
+      text-align: center;
+      transition: .3s;
+      &:hover{
+        background-color: #FFFFFF;
+        color: darkgray;
+        border: 1px solid darkgray;
+        transform: scale(120%, 120%);
+      }
+      &:active{
+        transform: scale(128%, 128%);
+        outline: none;
+      }
+      &:focus{
+        outline: none;
+      }
+
+    }
 
   }
 }
 
-.swiper-container {
-  width: 100%;
-  height: 100%;
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-
+.cart-table{
+  font-family: "Sansation", sans-serif;
+  font-size: 18px;
+  .center-cell{
+    vertical-align: middle;
   }
-
-  .swiper-pagination-bullet {
-    opacity: .5;
-    border: white solid 1px;
-    background-color: lighten($color: #4DD2DB, $amount: 8.5);
-    height: 12px;
-    width: 12px;
-    margin-top: 50px;
-    outline: none;
-    &:hover{
-      transform: scale(1.1);
-    }
-    &:active{
-      transform: scale(1.3);
-    }
+  .card-table-img{
+    clip-path: inset(0% 0% 0% 0% round 15px);
+    width: 200px;
+    height: 177px;
+    border: 2px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px 3px #E0E0E0;
   }
-
-  .swiper-pagination-bullet-active {
-    background-color: lighten($color: #4DD2DB, $amount: 8.5);
-    outline: none;
-    opacity: 1;
-    height: 17px;
-    width: 17px;
-
-  }
-  .swiper-scrollbar-drag{
-    background-color: lighten($color: #4DD2DB, $amount: 8.5);
-  }
-  .swiper-scrollbar {
-    background-color: lighten($color: #4DD2DB, $amount: 35);
-  }
-  .swiper-button-next,.swiper-button-prev{
-    color: lighten($color: #4DD2DB, $amount: 8.5);
-    outline: none;
-    &:hover{
-      transform: scale(1.2);
-      color: darken($color: #4DD2DB, $amount: 8.5);
-    }
-    &:active{
-      transform: scale(1.5);
-      color: darken($color: #4DD2DB, $amount: 8.5);
-    }
+}
+.prix-total{
+  font-family: "Sansation", sans-serif;
+  font-size: 20px;
+  span{
+    font-weight: bold;
   }
 }

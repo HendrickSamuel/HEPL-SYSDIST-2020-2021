@@ -1,0 +1,101 @@
+﻿@using System.Linq
+@using System.Globalization
+@using ShopWebApplication.Helpers;
+@model ShopWebApplication.Models.POCOS.User
+
+@{
+    ViewData["Title"] = "Bill";
+    int i = 0;
+}
+
+<section class="mt-5">
+    <div class="mt-4 container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="catalog-title text-center">Confirmation du payement</h1>
+            </div>
+        </div>
+        @if (Model.MyCart.TotalElement > 0)
+        {
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table cart-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Nom</th>
+                                <th>Quantité</th>
+                                <th>Prix unitaire</th>
+                                <th>Prix Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.MyCart.Items)
+                            {
+                                <tr>
+                                    <th class="center-cell">@(++i)</th>
+                                    <td class="center-cell"><img class="card-table-img" src="/img/@(item.Id).jpg" alt="card-img" onerror="this.onerror=null;this.src='/img/not-found.jpg'" /></td>
+                                    <td class="center-cell">@(item.Name)</td>
+                                    <td class="center-cell">@(item.Quantity)</td>
+                                    <td class="center-cell">@($"{item.PriceTva:0.##}") €</td>
+                                    <td class="center-cell">@($"{item.TotalPriceTva:0.##}") €</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mt-2 mt-lg-5 text-center text-lg-right">
+                <div class="col-12">
+                    <p class="prix-total">Prix total (@Model.MyCart.TotalElement articles) : <span>@($"{Model.MyCart.TotalTva:0.##}")</span> €</p>
+                </div>
+            </div>
+            <div class="row mt-2 mt-lg-5 text-center text-lg-right">
+                <div class="col-12">
+                    <p class="">Porte-feuille : <span>@($"{Model.Wallet:0.##}")</span></p>
+                </div>
+            </div>
+            <div class="row mt-2 mt-lg-5 text-center text-lg-right">
+                <div class="col-12">
+                    <p class="">Methode de livraison : </p>
+                </div>
+            </div>
+            @using (Html.BeginForm("", "Bill", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken();
+
+                <div class="row mt-1 text-center text-lg-right">
+                    <div class="col-12">
+                        <div class="delivery-mode-container">
+                            <!--RADIO BUTTON-->
+                            <input checked="checked"  type="radio" name="methode" id="methode-normal" value="Normal" required>
+                            <label class="delivery-mode" for="methode-normal">Normal</label>
+
+                            <input type="radio" name="methode" id="methode-express" value="Express" required>
+                            <label class="delivery-mode" for="methode-express">Express</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5 text-center text-lg-right">
+                    <div class="col-12">
+                        <button type="submit" id="btn-payement" class="my-btn">Commander</button>
+                    </div>
+                </div>
+
+            }
+        }
+        else
+        {
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="cart-empty">
+                        <p class="cart-empty-info">Il n'y a aucun articles dans votre panier</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

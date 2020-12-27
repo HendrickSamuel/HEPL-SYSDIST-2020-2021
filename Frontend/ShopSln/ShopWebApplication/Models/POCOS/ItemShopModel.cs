@@ -24,6 +24,10 @@ namespace ShopWebApplication.Models.POCOS
         public string Description { set; get; }
         
         #endregion
+        
+        #region Constructor
+        public ItemShopModel() {}
+        #endregion
 
         public override string ToString()
         {

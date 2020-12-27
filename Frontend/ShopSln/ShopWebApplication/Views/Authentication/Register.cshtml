@@ -1,0 +1,73 @@
+﻿@model ShopWebApplication.Models.Authentication.RegisterModel;
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "_Layout";
+}
+
+<section class=" mt-5 ">
+    <div class="container-fluid pb-3">
+        <div id="zone-info" class="row text-center">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-12 my-3">
+                        <div class="card card-body">
+                            <div class="card-title text-center">
+                                <h1 class="display-5">@ViewBag.Title</h1>
+                                <div class="title-underline-center"></div>
+                            </div>
+                            <div class="col-12">
+                                @if (ViewBag.Error != null)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        @ViewBag.Error
+                                    </div>
+                                }
+                                else if (ViewBag.Success != null)
+                                {
+                                    <div class="alert alert-success" role="alert">
+                                        @ViewBag.Success
+                                    </div>
+                                }
+                            </div>
+                                @using (Html.BeginForm("Register", "Authentication", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken();
+                                    <div class="col-12 col-xl-6 mx-xl-auto">
+                                        <div class="input-group mt-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control form-control-lg" value="@Model.UserName" placeholder="Encodez votre @Html.DisplayNameFor(m => Model.UserName).ToLower() *" id="username" name="username" required>
+                                        </div>
+                                    </div>
+                                    <!-- Password -->
+                                    <div class="col-12 col-xl-6 mx-xl-auto">
+                                        <div class="input-group mt-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            <input type="password" class="form-control form-control-lg" value="@Model.Password" placeholder="Encodez @Html.DisplayNameFor(m => Model.Password).ToLower() * " id="password" name="password" required>
+                                        </div>
+                                    </div>
+                                    <!-- Confirm Password -->
+                                    <div class="col-12 col-xl-6 mx-xl-auto">
+                                        <div class="input-group mt-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            <input type="password" class="form-control form-control-lg" value="@Model.ConfirmPassword" placeholder="Encodez @Html.DisplayNameFor(m => Model.ConfirmPassword).ToLower() * " id="confirmpassword" name="confirmpassword" required>
+                                        </div>
+                                    </div>
+                                    <div class=" mt-5 col-12 mx-auto">
+                                        <button id="btn-register" href="#" class="my-btn">S'enregister</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                </div> 
+            </div>
+
+        </div>
+    </div>    
+</section>
