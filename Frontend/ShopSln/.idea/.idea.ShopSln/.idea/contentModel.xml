@@ -10,25 +10,38 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AuthenticationController.cs" t="Include" />
+          <e p="BillController.cs" t="Include" />
+          <e p="CartController.cs" t="Include" />
           <e p="CatalogController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
         </e>
+        <e p="Data" t="Include">
+          <e p="AppDbContext.cs" t="Include" />
+          <e p="IdentityDataInitializer.cs" t="Include" />
+        </e>
         <e p="Helpers" t="Include">
+          <e p="CurrentUser.cs" t="Include" />
           <e p="DataCatalogHelper.cs" t="Include" />
           <e p="ItemShopHelper.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20201226175154_InitialMigration.cs" t="Include" />
+          <e p="20201226175154_InitialMigration.Designer.cs" t="Include" />
+          <e p="AppDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Authentication" t="Include">
             <e p="LoginModel.cs" t="Include" />
+            <e p="RegisterModel.cs" t="Include" />
           </e>
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="POCOS" t="Include">
-            <e p="Cart.cs" t="Include" />
-            <e p="Command.cs" t="Include" />
+            <e p="CartModel.cs" t="Include" />
+            <e p="CommandModel.cs" t="Include" />
             <e p="ItemCartModel.cs" t="Include" />
             <e p="ItemShopModel.cs" t="Include" />
             <e p="LightCart.cs" t="Include" />
-            <e p="User.cs" t="Include" />
+            <e p="UserModel.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -43,6 +56,9 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="ShopDB.db" t="Include" />
+        <e p="ShopDB.db-shm" t="Include" />
+        <e p="ShopDB.db-wal" t="Include" />
         <e p="ShopWebApplication.csproj" t="IncludeRecursive" />
         <e p="Startup.cs" t="Include" />
         <e p="Views" t="Include">
@@ -50,6 +66,13 @@
           <e p="_ViewStart.cshtml" t="Include" />
           <e p="Authentication" t="Include">
             <e p="Login.cshtml" t="Include" />
+            <e p="Register.cshtml" t="Include" />
+          </e>
+          <e p="Bill" t="Include">
+            <e p="Preview.cshtml" t="Include" />
+          </e>
+          <e p="Cart" t="Include">
+            <e p="Cart.cshtml" t="Include" />
           </e>
           <e p="Catalog" t="Include">
             <e p="Catalog.cshtml" t="Include" />
@@ -61,14 +84,13 @@
           <e p="Shared" t="Include">
             <e p="_CartCatalog.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
+            <e p="_LayoutLogged.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
             <e p="Error.cshtml" t="Include" />
           </e>
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
-            <e p="main.css" t="Include" />
-            <e p="main.css.map" t="Include" />
             <e p="main.scss" t="Include" />
             <e p="site.css" t="Include" />
           </e>

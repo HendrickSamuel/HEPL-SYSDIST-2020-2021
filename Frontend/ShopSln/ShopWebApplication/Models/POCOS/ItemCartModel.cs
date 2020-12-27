@@ -28,7 +28,7 @@ namespace ShopWebApplication.Models.POCOS
         
         public float PriceTva
         {
-            get { return Price += Price * Tva; }
+            get { return Price += Price * (Tva / 100); }
         }
         
         [JsonPropertyName("totalPrice")]

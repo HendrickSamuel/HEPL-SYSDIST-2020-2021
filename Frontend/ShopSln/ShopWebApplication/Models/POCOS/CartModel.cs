@@ -20,9 +20,10 @@ namespace ShopWebApplication.Models.POCOS
             get
             {
                 int total = 0;
-                foreach (var itemCart in Items)
+                if (Items != null)
                 {
-                    total += itemCart.Quantity;
+                    foreach (var itemCart in Items)
+                        total += itemCart.Quantity;
                 }
                 return total;
             }
