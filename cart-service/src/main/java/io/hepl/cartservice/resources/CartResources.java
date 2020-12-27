@@ -88,6 +88,16 @@ public class CartResources {
         }
     }
 
+    @RequestMapping("/swap/{oldUser}/{newUser}")
+    public void swapClient(@PathVariable String oldUser, @PathVariable String newUser)
+    {
+        for(Client client : clients)
+        {
+            if(client.getUserID().equals(oldUser))
+                client.setUserID(newUser);
+        }
+    }
+
     @RequestMapping("/list/{user}")
     public Client getUsersCart(@PathVariable String user)
     {

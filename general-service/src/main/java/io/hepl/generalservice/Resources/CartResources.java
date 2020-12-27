@@ -40,6 +40,16 @@ public class CartResources {
         }
     }
 
+    @RequestMapping("/swap/{oldUser}/{newUser}")
+    public void swapCart(@PathVariable String oldUser, @PathVariable String newUser)
+    {
+        try {
+            restTemplate.getForObject("http://cart-service/cart/swap/"+oldUser+"/"+newUser, Object.class);
+        } catch (HttpClientErrorException ex) {
+            System.out.println(ex.getStatusCode());
+        }
+    }
+
     @RequestMapping("/remove/{user}/{item}/{quantity}")
     public void removeItemToCart(@PathVariable String user, @PathVariable String item, @PathVariable int quantity)
     {
