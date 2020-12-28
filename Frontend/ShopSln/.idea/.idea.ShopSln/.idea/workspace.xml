@@ -26,6 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e515ae9a-3305-406f-bbca-f663be667027" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Services/ITokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/HomeController.cs" afterDir="false" />
@@ -205,7 +206,7 @@
       <workItem from="1608742363866" duration="7774000" />
       <workItem from="1608918081713" duration="1414000" />
       <workItem from="1609030880326" duration="965000" />
-      <workItem from="1609075665247" duration="8858000" />
+      <workItem from="1609075665247" duration="8271000" />
     </task>
     <servers />
   </component>

@@ -23,6 +23,7 @@
           <e p="CurrentUser.cs" t="Include" />
           <e p="DataCatalogHelper.cs" t="Include" />
           <e p="ItemShopHelper.cs" t="Include" />
+          <e p="UserToken.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
           <e p="20201226175154_InitialMigration.cs" t="Include" />
@@ -55,6 +56,10 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="ITokenService.cs" t="Include" />
+          <e p="TokenService.cs" t="Include" />
         </e>
         <e p="ShopDB.db" t="Include" />
         <e p="ShopDB.db-shm" t="Include" />
