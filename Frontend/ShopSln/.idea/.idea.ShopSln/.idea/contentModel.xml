@@ -57,15 +57,13 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
-        <e p="Services" t="Include">
-          <e p="ITokenService.cs" t="Include" />
-          <e p="TokenService.cs" t="Include" />
-        </e>
         <e p="ShopDB.db" t="Include" />
-        <e p="ShopDB.db-shm" t="Include" />
-        <e p="ShopDB.db-wal" t="Include" />
         <e p="ShopWebApplication.csproj" t="IncludeRecursive" />
         <e p="Startup.cs" t="Include" />
+        <e p="Token" t="Include">
+          <e p="TokenJwt.cs" t="Include" />
+          <e p="TokenManager.cs" t="Include" />
+        </e>
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
           <e p="_ViewStart.cshtml" t="Include" />
@@ -96,6 +94,8 @@
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="main.css" t="Include" />
+            <e p="main.css.map" t="Include" />
             <e p="main.scss" t="Include" />
             <e p="site.css" t="Include" />
           </e>

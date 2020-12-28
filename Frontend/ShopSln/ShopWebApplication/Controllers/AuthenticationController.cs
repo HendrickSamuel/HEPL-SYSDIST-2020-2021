@@ -6,8 +6,12 @@ using ShopWebApplication.Helpers;
 using ShopWebApplication.Models.Authentication;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using ShopWebApplication.Token;
 
 namespace ShopWebApplication.Controllers
 {
@@ -17,16 +21,19 @@ namespace ShopWebApplication.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IHttpContextAccessor _context;
+
         #endregion
 
         #region Constructor
         public AuthenticationController(UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager, IHttpContextAccessor context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _context = context;
         }
         #endregion
 
@@ -61,6 +68,7 @@ namespace ShopWebApplication.Controllers
                     var signInResult = await _signInManager.PasswordSignInAsync(obj.UserName, obj.Password, false, false);
                     if (signInResult.Succeeded)
                     {
+                        SwapCart(obj.UserName);
                         return RedirectToAction("MyCatalog", "Catalog");
                     }
                     ViewBag.Error = "Mauvais mot de passe !";
@@ -98,7 +106,7 @@ namespace ShopWebApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(obj.Password.ToLower().CompareTo(obj.ConfirmPassword.ToLower()) == 0)
+                if(String.Compare(obj.Password.ToLower(), obj.ConfirmPassword.ToLower(), StringComparison.Ordinal) == 0)
                 {
                     var user = new IdentityUser { UserName = obj.UserName };
                     var createUserResult = await _userManager.CreateAsync(user, obj.Password);
@@ -120,6 +128,7 @@ namespace ShopWebApplication.Controllers
                         }
                         _userManager.AddToRoleAsync(user, "Customer").Wait();
                         ViewBag.Success = "L'utilisateur a été enregistré, veuillez vous connecter";
+                        SwapCart(obj.UserName);
                         return RedirectToAction("Login", "Authentication");
                     }
 
@@ -140,24 +149,43 @@ namespace ShopWebApplication.Controllers
         #endregion
 
         #region Method
-        //private CurrentUser GetUserIdentity()
-        //{
-        //    var currentUser = new CurrentUser();
-        //    var user = _userManager.GetUserAsync(_context.HttpContext.User).Result;
-        //    if (user != null)
-        //    {
-        //        currentUser.Name = user.UserName;
-        //        if (_userManager.IsInRoleAsync(user, "Customer").Result)
-        //        {
-        //            currentUser.Role = "Customer";
-        //        }
-        //        else if (_userManager.IsInRoleAsync(user, "Visitor").Result)
-        //        {
-        //            currentUser.Role = "Visitor";
-        //        }
-        //    }
-        //    return currentUser;
-        //}
+
+        private bool SwapCart(string connectedUser)
+        {
+            var currentUser = GetUserIdentity();
+            using (var client = new HttpClient())
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/swap/{currentUser.Name.ToLower()}/{connectedUser.ToLower()}"))
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());
+
+                var reponse = client.SendAsync(request).Result;
+                if (reponse.IsSuccessStatusCode)
+                {
+                    return true; 
+                }
+            }
+            return false;
+        }
+        private CurrentUser GetUserIdentity()
+        {
+            var currentUser = new CurrentUser();
+            var user = _userManager.GetUserAsync(_context.HttpContext.User).Result;
+            if (user != null)
+            {
+                currentUser.Name = user.UserName;
+                if (_userManager.IsInRoleAsync(user, "Customer").Result)
+                {
+                    currentUser.Role = "Customer";
+                }
+                else if (_userManager.IsInRoleAsync(user, "Visitor").Result)
+                {
+                    currentUser.Role = "Visitor";
+                }
+            }
+            return currentUser;
+        }
         #endregion
     }
 }

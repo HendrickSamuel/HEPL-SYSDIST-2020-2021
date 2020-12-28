@@ -17,17 +17,17 @@ namespace ShopWebApplication.Controllers
     public class BillController : Controller
     {
         #region Members
-        private readonly HttpClient _client;
+        private readonly HttpClient _client = new HttpClient();
+
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IHttpContextAccessor _context;
         #endregion
 
         #region Constructor
-        public BillController(IHttpContextAccessor context, HttpClient client, UserManager<IdentityUser> userManager)
+        public BillController(IHttpContextAccessor context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-            _client = client;
         }
         #endregion
 

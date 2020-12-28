@@ -5,19 +5,21 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using ShopWebApplication.Helpers;
 using ShopWebApplication.Models.POCOS;
+using ShopWebApplication.Token;
 
 namespace ShopWebApplication.Controllers
 {
     public class CartController : Controller
     {
         #region Private Variables
-        private readonly HttpClient _client;
+        private readonly HttpClient _client = new HttpClient();
+
         //private readonly ILogger<CatalogController> _logger;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IHttpContextAccessor _context;
+
         #endregion
 
         #region Constructors
@@ -26,11 +28,10 @@ namespace ShopWebApplication.Controllers
         //    _logger = logger;
         //    _client = new HttpClient();
         //}        
-        public CartController(IHttpContextAccessor context, HttpClient client, UserManager<IdentityUser> userManager)
+        public CartController(IHttpContextAccessor context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-            _client = client;
         }
 
         #endregion
@@ -121,11 +122,13 @@ namespace ShopWebApplication.Controllers
                 using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/cart/get/{username.ToLower()}"))
                 {
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());
+
                     var reponse = _client.SendAsync(request).Result;
                     if (reponse.IsSuccessStatusCode)
                     {
                         var jsonString = reponse.Content.ReadAsStringAsync().Result;
-                        myCart = JsonSerializer.Deserialize<User>(jsonString).MyCart;
+                        myCart = JsonSerializer.Deserialize<User>(jsonString)?.MyCart;
                     }
                 }
             }
@@ -143,6 +146,8 @@ namespace ShopWebApplication.Controllers
             using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/cart/remove/{user.ToLower()}/{idItem}/{quantity}"))
             {
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());
+
                 var reponse = _client.SendAsync(request).Result;
                 if (reponse.IsSuccessStatusCode)
                 {
