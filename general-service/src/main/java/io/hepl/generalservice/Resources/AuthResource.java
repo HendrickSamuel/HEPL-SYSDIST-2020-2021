@@ -34,19 +34,18 @@ public class AuthResource {
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthToken(@RequestBody AuthentificationRequest authentificationRequest) throws  Exception{
-        try{
-            authManager.authenticate(
-              new UsernamePasswordAuthenticationToken(authentificationRequest.getUsername(), authentificationRequest.getPassword())
-            );
-        }
-        catch (BadCredentialsException exception)
-        {
-            throw new Exception("Incorrect username and password", exception);
-        }
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authentificationRequest.getUsername());
-        final String jwt = jwtUtil.generateToken(userDetails);
+        if(userDetails.getPassword().equals(authentificationRequest.getPassword()))
+        {
+            final String jwt = jwtUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new AuthentificationResponse(jwt));
+            return ResponseEntity.ok(new AuthentificationResponse(jwt));
+        }
+        else
+        {
+            throw new Exception("Incorrect username and password");
+        }
+
     }
 }
