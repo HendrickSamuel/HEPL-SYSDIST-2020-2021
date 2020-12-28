@@ -36,7 +36,7 @@ public class AuthResource {
     public ResponseEntity<?> createAuthToken(@RequestBody AuthentificationRequest authentificationRequest) throws  Exception{
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authentificationRequest.getUsername());
-        if(userDetails.getPassword().equals(authentificationRequest.getPassword()))
+        if(userDetails != null && userDetails.getPassword().equals(authentificationRequest.getPassword()))
         {
             final String jwt = jwtUtil.generateToken(userDetails);
 
