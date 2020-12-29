@@ -70,9 +70,4 @@ public class StockResource {
         else
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
     }
-
-
-
-
-
 }

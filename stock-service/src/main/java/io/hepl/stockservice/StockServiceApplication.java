@@ -18,7 +18,7 @@ public class StockServiceApplication {
         items.add(new Item("item-2","BonBons","petites description sympa", "autre", 2.35f , 5));
         items.add(new Item("item-3","Clavier corsair K-70","clavier mécanique", "electronique", 145f , 2));
         items.add(new Item("item-4","Lot de bics","pack de 5 bics 4 couleurs", "autre", 2.10f , 35));
-        items.add(new Item("item-5","Guitar électrique","elle est stylée", "autre", 399.99f , 1));
+        items.add(new Item("item-5","Guitare électrique","elle est stylée", "autre", 399.99f , 1));
 
         return items;
     }
