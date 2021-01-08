@@ -13,6 +13,7 @@
           <e p="BillController.cs" t="Include" />
           <e p="CartController.cs" t="Include" />
           <e p="CatalogController.cs" t="Include" />
+          <e p="CommandController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
@@ -20,9 +21,13 @@
           <e p="IdentityDataInitializer.cs" t="Include" />
         </e>
         <e p="Helpers" t="Include">
+          <e p="CurrentCommand.cs" t="Include" />
           <e p="CurrentUser.cs" t="Include" />
           <e p="DataCatalogHelper.cs" t="Include" />
           <e p="ItemShopHelper.cs" t="Include" />
+          <e p="PreviewCommandHelper.cs" t="Include" />
+          <e p="ReponseHelper.cs" t="Include" />
+          <e p="UserCommandHelper.cs" t="Include" />
           <e p="UserToken.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
@@ -40,6 +45,7 @@
             <e p="CartModel.cs" t="Include" />
             <e p="CommandModel.cs" t="Include" />
             <e p="ItemCartModel.cs" t="Include" />
+            <e p="ItemCommandModel.cs" t="Include" />
             <e p="ItemShopModel.cs" t="Include" />
             <e p="LightCart.cs" t="Include" />
             <e p="UserModel.cs" t="Include" />
@@ -79,6 +85,9 @@
           </e>
           <e p="Catalog" t="Include">
             <e p="Catalog.cshtml" t="Include" />
+          </e>
+          <e p="Command" t="Include">
+            <e p="Commands.cshtml" t="Include" />
           </e>
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />

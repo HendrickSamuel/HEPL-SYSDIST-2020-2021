@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace ShopWebApplication.Models.POCOS
 {
-    public class Cart
+    public class CartModel
     {
         #region Public Properties
         [JsonPropertyName("totalTVA")]
@@ -32,7 +32,7 @@ namespace ShopWebApplication.Models.POCOS
         #endregion
         
         #region Constructor
-        public Cart()
+        public CartModel()
         {
             Total = 0f;
             TotalTva = 0f;

@@ -113,9 +113,9 @@ namespace ShopWebApplication.Controllers
             return currentUser;
         }
 
-        private Cart GetCart(String username)
+        private CartModel GetCart(String username)
         {
-            Cart myCart = new Cart();
+            CartModel myCartModel = new CartModel();
             try
             {
                 _client.DefaultRequestHeaders.Accept.Clear();
@@ -128,16 +128,16 @@ namespace ShopWebApplication.Controllers
                     if (reponse.IsSuccessStatusCode)
                     {
                         var jsonString = reponse.Content.ReadAsStringAsync().Result;
-                        myCart = JsonSerializer.Deserialize<User>(jsonString)?.MyCart;
+                        myCartModel = JsonSerializer.Deserialize<UserModel>(jsonString)?.MyCartModel;
                     }
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"{e.Source}: {e.Message}");
-                return new Cart();
+                return new CartModel();
             }
-            return myCart;
+            return myCartModel;
         }
 
         private bool RemoveItemFromCart(string idItem, string user, int quantity)

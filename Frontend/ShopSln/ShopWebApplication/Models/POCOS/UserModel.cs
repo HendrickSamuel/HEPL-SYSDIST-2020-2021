@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace ShopWebApplication.Models.POCOS
 {
-    public class User
+    public class UserModel
     {
         #region Public Properties
         [JsonPropertyName("id")]
@@ -17,7 +17,7 @@ namespace ShopWebApplication.Models.POCOS
         public float Wallet { get; set; } 
         
         [JsonPropertyName("cart")]
-        public Cart MyCart { get; set; }
+        public CartModel MyCartModel { get; set; }
         
         [JsonPropertyName("status")]
         public string Status { get; set; }
@@ -26,7 +26,7 @@ namespace ShopWebApplication.Models.POCOS
         
         #region Constructor
 
-        public User()
+        public UserModel()
         {
             // Name = Environment.MachineName;
             // Status = "visiteur";
@@ -35,7 +35,7 @@ namespace ShopWebApplication.Models.POCOS
 
         public override string ToString()
         {
-            return $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Wallet)}: {Wallet}, {nameof(MyCart)}: {MyCart}, {nameof(Status)}: {Status}";
+            return $"{nameof(Id)}: {Id}, {nameof(Name)}: {Name}, {nameof(Wallet)}: {Wallet}, {nameof(MyCartModel)}: {MyCartModel}, {nameof(Status)}: {Status}";
         }
     }
 }

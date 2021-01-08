@@ -376,3 +376,32 @@
     font-weight: bold;
   }
 }
+.command-review-title{
+  letter-spacing: 2.2rem;
+  text-align: center;
+  font-size: 36px;
+  text-transform: capitalize;
+  font-family: "Sansation", sans-serif;
+}
+.command-review-table{
+  font-family: "Sansation", sans-serif;
+  font-size: 13px;
+  .center-cell{
+    vertical-align: middle;
+  }
+  .card-table-img{
+    clip-path: inset(0% 0% 0% 0% round 15px);
+    width: (200/1.5)px;
+    height: (177/1.5)px;
+    border: 1.5px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px 3px #E0E0E0;
+  }
+}
+.command-review-subtitle{
+  font-family: "Sansation", sans-serif;
+  font-size: 15px;
+  span{
+    font-weight: bold;
+  }
+}

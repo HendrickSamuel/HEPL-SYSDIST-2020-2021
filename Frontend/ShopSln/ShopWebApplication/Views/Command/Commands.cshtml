@@ -1,0 +1,69 @@
+﻿@using System.Linq
+@using System.Globalization
+@using ShopWebApplication.Helpers;
+@model ShopWebApplication.Helpers.UserCommandHelper
+
+@{
+    ViewData["Title"] = "Vos commandes";
+    int i = 0;
+}
+
+<section class="mt-5">
+<div class="mt-4 container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="command-review-title text-center">Vos commandes</h1>
+        </div>
+    </div>
+        @if (Model.Commands.Count > 0)
+        {
+            foreach (var command in Model.Commands)
+            {
+                var j = 0;
+                <div class="row mt-3 mb-3">
+                    <div class="col-12 ">
+                        <p class="text-center command-review-subtitle">Commande n°@(++i) - IdCommande : @(command.Id)</p>
+                    </div>
+                    <div class="mt-2 col-12">
+                        <table class="table command-review-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Nom</th>
+                                    <th>Quantité</th>
+                                    <th>Prix unitaire</th>
+                                    <th>Prix Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in command.Items)
+                                {
+                                    <tr>
+                                        <th class="center-cell">@(++j)</th>
+                                        <td class="center-cell"><img class="card-table-img" src="/img/@(item.Id).jpg" alt="card-img" onerror="this.onerror=null;this.src='/img/not-found.jpg'" /></td>
+                                        <td class="center-cell">@(item.Name)</td>
+                                        <td class="center-cell">@(item.Quantity)</td>
+                                        <td class="center-cell">@($"{item.PriceTva:0.##}") €</td>
+                                        <td class="center-cell">@($"{item.TotalPriceTva:0.##}") €</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="cart-empty">
+                        <p class="cart-empty-info">Aucunes commandes n'a été effectué jusqu'à ce jour</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

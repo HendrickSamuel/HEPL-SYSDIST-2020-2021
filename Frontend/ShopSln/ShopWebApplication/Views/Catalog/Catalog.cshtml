@@ -13,7 +13,7 @@
 <section class=" mt-5 ">
     <div class="mt-4">
         @* Partial View : The current cart *@
-        @await Html.PartialAsync("~/Views/Shared/_CartCatalog.cshtml", Model.MyCart) <!-- OR : <partial name="~/Views/Shared/_CartCatalog.cshtml" />-->
+        @await Html.PartialAsync("~/Views/Shared/_CartCatalog.cshtml", Model.MyCartModel) <!-- OR : <partial name="~/Views/Shared/_CartCatalog.cshtml" />-->
         <div class="row">
             <div class="col-12">
                 <h1 class="catalog-title text-center">Nos produits</h1>
@@ -25,7 +25,7 @@
                     <div class="col-12 col-lg-6 col-xl-4">
                         @using (Html.BeginForm("OnSelectedItem", "Catalog", FormMethod.Post))
                         {
-                            bool exist = Model.MyCart.Items.Exists(itemCart => itemCart.Id == item.Id);
+                            bool exist = Model.MyCartModel.Items.Exists(itemCart => itemCart.Id == item.Id);
                             bool stockSuffisant = true;
                             bool stockNull = item.Stock == 0;
                             if (stockNull)
@@ -35,7 +35,7 @@
                             }
                             if (exist)
                             {
-                                var itemCartModel = Model.MyCart.Items.Where(itemCart => itemCart.Id == item.Id).FirstOrDefault();
+                                var itemCartModel = Model.MyCartModel.Items.Where(itemCart => itemCart.Id == item.Id).FirstOrDefault();
                                 stockSuffisant = itemCartModel != null && itemCartModel.Quantity < itemCartModel.Stock;
                             }
                             @Html.AntiForgeryToken();

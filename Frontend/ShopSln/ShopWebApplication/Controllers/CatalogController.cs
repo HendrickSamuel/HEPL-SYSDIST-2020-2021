@@ -47,7 +47,7 @@ namespace ShopWebApplication.Controllers
                 ViewData["Layout"] = "_Layout";
             else
                 ViewData["Layout"] = "_LayoutLogged";
-            return View("Catalog", new DataCatalogHelper(){IShopHelper = itemShopHelper, MyCart = myCart});
+            return View("Catalog", new DataCatalogHelper(){IShopHelper = itemShopHelper, MyCartModel = myCart});
         }
         // /{idItem}")]
         [HttpPost("[controller]/OnSelectedItem")]
@@ -74,7 +74,7 @@ namespace ShopWebApplication.Controllers
                 ViewData["Layout"] = "_Layout";
             else
                 ViewData["Layout"] = "_LayoutLogged";
-            return View("Catalog", new DataCatalogHelper(){IShopHelper = GetItems(), MyCart = GetCart(currentUser.Name) });
+            return View("Catalog", new DataCatalogHelper(){IShopHelper = GetItems(), MyCartModel = GetCart(currentUser.Name) });
         }
         #endregion
         #region Method
@@ -96,9 +96,9 @@ namespace ShopWebApplication.Controllers
             }
             return currentUser;
         }
-        private Cart GetCart(String username)
+        private CartModel GetCart(String username)
         {
-            Cart myCart = new Cart();
+            CartModel myCartModel = new CartModel();
             try
             {
                 _client.DefaultRequestHeaders.Accept.Clear();
@@ -110,16 +110,16 @@ namespace ShopWebApplication.Controllers
                     if (reponse.IsSuccessStatusCode)
                     {
                         var jsonString = reponse.Content.ReadAsStringAsync().Result;
-                        myCart = JsonSerializer.Deserialize<User>(jsonString)?.MyCart;
+                        myCartModel = JsonSerializer.Deserialize<UserModel>(jsonString)?.MyCartModel;
                     }
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"{e.Source}: {e.Message}");
-                return new Cart();
+                return new CartModel();
             }
-            return myCart;
+            return myCartModel;
         }
         private ItemShopHelper GetItems()
         {

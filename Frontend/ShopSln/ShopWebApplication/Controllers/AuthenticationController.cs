@@ -154,7 +154,7 @@ namespace ShopWebApplication.Controllers
         {
             var currentUser = GetUserIdentity();
             using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/swap/{currentUser.Name.ToLower()}/{connectedUser.ToLower()}"))
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/cart/swap/{currentUser.Name.ToLower()}/{connectedUser.ToLower()}"))
             {
                 client.DefaultRequestHeaders.Accept.Clear();
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

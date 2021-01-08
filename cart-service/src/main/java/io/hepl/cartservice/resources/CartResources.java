@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/cart")
@@ -91,10 +92,26 @@ public class CartResources {
     @RequestMapping("/swap/{oldUser}/{newUser}")
     public void swapClient(@PathVariable String oldUser, @PathVariable String newUser)
     {
+        Client oldClient = null;
+        Client newClient = null;
         for(Client client : clients)
         {
             if(client.getUserID().equals(oldUser))
-                client.setUserID(newUser);
+               oldClient = client;
+            else if(client.getUserID().equals(newUser))
+                newClient = client;
+        }
+
+        if(newClient != null)
+        {
+            HashMap<String, Integer> mapTmp = new HashMap<>();
+            mapTmp.putAll(newClient.getItems());
+            mapTmp.putAll(oldClient.getItems()); //on sait qu'il y a une exception mais ce n'est pas dans un systeme distrib
+            newClient.setItems(mapTmp);
+        }
+        else
+        {
+            oldClient.setUserID(newUser);
         }
     }
 
@@ -107,6 +124,6 @@ public class CartResources {
                 return client;
         }
 
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+        return new Client(user);
     }
 }

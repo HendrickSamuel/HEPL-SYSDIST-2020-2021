@@ -1,7 +1,7 @@
 ﻿@using System.Linq
 @using System.Globalization
 @using ShopWebApplication.Helpers;
-@model ShopWebApplication.Models.POCOS.Cart
+@model ShopWebApplication.Models.POCOS.CartModel
 
 @{
     ViewData["Title"] = "Cart";
@@ -63,7 +63,11 @@
             {
                 <div class="row mt-5 text-center text-lg-right">
                     <div class="col-12">
-                        <a id="btn-payement" href="@(Url.Action("Preview", "Bill"))" class="my-btn">Passez au payement</a>
+                        @using (Html.BeginForm("PreviewCommand", "Bill", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" id="btn-payement" name="btn-payement" class="my-btn">Passez au payement</button>
+                        }
                     </div>
                 </div>
             }
