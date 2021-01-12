@@ -10,6 +10,7 @@ public class AppFourniseur {
 
     public static void main(String[] args) {
         Fournisseur fournisseur = new Fournisseur("tcp://localhost:61616", latch);
+        System.out.println(fournisseur);
         fournisseur.ReceiveMsg();
     }
 

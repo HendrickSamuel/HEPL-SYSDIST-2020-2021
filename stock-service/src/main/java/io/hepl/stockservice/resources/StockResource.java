@@ -4,16 +4,21 @@
 
 package io.hepl.stockservice.resources;
 
+import io.hepl.stockservice.jms.Receiver;
+import io.hepl.stockservice.jms.Sender;
 import io.hepl.stockservice.models.Item;
 import io.hepl.stockservice.models.StockAvailabilityResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.function.Predicate;
 
 @RestController
 @RequestMapping("/stock")
@@ -53,11 +58,38 @@ public class StockResource {
         if(item != null)
         {
             item.setStock(item.getStock() - quantity);
+            if(item.getStock() <= 0)
+            {
+                //Envoi Message au service Stock
+                DemandeRechargerStock(item);
+                ComparaisonPropositionItem();
+            }
         }
         else
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
-
     }
+
+
+    private void DemandeRechargerStock(Item item) {
+        new Sender().DemandeStock(item);
+    }
+    private void ComparaisonPropositionItem() {
+        Receiver receiver = new Receiver();
+        LinkedList<Item> items = receiver.AttentePropositionItem();
+        LinkedList<Float> prices = new LinkedList<Float>();
+        Item newItem = null;
+        if(items.size() > 0){
+            for (Item item: items) prices.add(item.getPrice());
+            // On Compare et on recharge le stock
+            float price = prices.stream().min(Float::compare).get();
+            newItem = items.stream().filter(item -> item.getPrice() == price).findAny().orElse(null);
+            if(newItem != null){
+                // Recharge
+
+            }
+        }
+    }
+
 
     @RequestMapping("add/{itemId}/{quantity}")
     public void AddItem(@PathVariable String itemId, @PathVariable int quantity)

@@ -20,7 +20,6 @@ namespace ShopWebApplication.Models.POCOS
         [JsonPropertyName("items")]
         public List<ItemCommandModel> Items { get; set; }
         
-        
         [JsonPropertyName("amount")]
         public float Amount { get; set; }
         
@@ -42,6 +41,7 @@ namespace ShopWebApplication.Models.POCOS
         public CommandModel()
         {
             Mode = "";
+            Items = new List<ItemCommandModel>();
         }
         
         

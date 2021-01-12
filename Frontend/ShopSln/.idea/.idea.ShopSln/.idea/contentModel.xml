@@ -23,6 +23,7 @@
         <e p="Helpers" t="Include">
           <e p="CurrentCommand.cs" t="Include" />
           <e p="CurrentUser.cs" t="Include" />
+          <e p="CurrentUserCommandHelper.cs" t="Include" />
           <e p="DataCatalogHelper.cs" t="Include" />
           <e p="ItemShopHelper.cs" t="Include" />
           <e p="PreviewCommandHelper.cs" t="Include" />

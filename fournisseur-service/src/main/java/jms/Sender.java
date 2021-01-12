@@ -56,6 +56,7 @@ public class Sender {
     public void Send(Object obj) throws JMSException {
         if(obj instanceof Item){
            ObjectMessage objectMessage = this.session.createObjectMessage((Item)obj);
+           objectMessage.setStringProperty("type", "proposition-stock");
            this.producer.send(objectMessage);
         }else if(obj instanceof String){
             TextMessage textMessage = this.session.createTextMessage((String)obj);

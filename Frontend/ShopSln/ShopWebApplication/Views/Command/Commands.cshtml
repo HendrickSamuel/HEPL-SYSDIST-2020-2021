@@ -5,6 +5,7 @@
 
 @{
     ViewData["Title"] = "Vos commandes";
+    Layout = "_LayoutLogged";
     int i = 0;
 }
 
@@ -25,7 +26,7 @@
                         <p class="text-center command-review-subtitle">Commande n°@(++i) - IdCommande : @(command.Id)</p>
                     </div>
                     <div class="mt-2 col-12">
-                        <table class="table command-review-table">
+                        <table class="table command-review-table text-center">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -60,7 +61,9 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <div class="cart-empty">
-                        <p class="cart-empty-info">Aucunes commandes n'a été effectué jusqu'à ce jour</p>
+                        <div class="alert-info">
+                            <p class="cart-empty-info text-center p-2">Aucunes commandes n'a été effectué jusqu'à ce jour</p>
+                        </div>
                     </div>
                 </div>
             </div>

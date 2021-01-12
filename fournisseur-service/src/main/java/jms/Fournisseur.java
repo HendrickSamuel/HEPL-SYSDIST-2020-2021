@@ -89,4 +89,14 @@ public class Fournisseur {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Fournisseur{" +
+                "latch=" + latch +
+                ", id=" + id +
+                ", receiver=" + receiver +
+                ", sender=" + sender +
+                '}';
+    }
 }

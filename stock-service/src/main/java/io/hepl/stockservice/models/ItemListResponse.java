@@ -7,7 +7,7 @@ package io.hepl.stockservice.models;
 import java.util.ArrayList;
 
 public class ItemListResponse {
-     private ArrayList<Item> items;
+    private ArrayList<Item> items;
 
     public ItemListResponse() {
     }

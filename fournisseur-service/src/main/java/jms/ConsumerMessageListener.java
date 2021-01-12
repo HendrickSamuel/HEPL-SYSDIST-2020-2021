@@ -21,9 +21,11 @@ public class ConsumerMessageListener implements MessageListener {
             } catch (JMSException e) {
                 e.printStackTrace();
             }
-        }else if(message instanceof StreamMessage){
-
         }else if(message instanceof ObjectMessage){
+            ObjectMessage objectMessage = (ObjectMessage) message;
+
+            System.out.println(consumerName + " - " + String.format("%1$tY-%1$tm-%1$td,%1$tH:%1$tM:%1$tS", new Date()) + "\n\tReception du ObjectMessage du service stock");
+            this.fournisseur.SendMsg(objectMessage);
 
         }
     }

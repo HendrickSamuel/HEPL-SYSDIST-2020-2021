@@ -79,4 +79,13 @@ public class OrderResource {
     {
         return new CommandList(repo.findByClient(client));
     }
+
+    @RequestMapping("/current/{client}")
+    public Command getWaitingCommande(@PathVariable String client){
+        Command commandToReturn = repo.findCommandByClientAndStatus(client, "EN ATTENTE DE VALIDATION");
+        if(commandToReturn != null)
+            return commandToReturn;
+        else
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+    }
 }

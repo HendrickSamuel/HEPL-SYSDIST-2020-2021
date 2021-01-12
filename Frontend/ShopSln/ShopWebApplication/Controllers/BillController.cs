@@ -38,13 +38,13 @@ namespace ShopWebApplication.Controllers
         [Authorize(Roles = "Customer")]
         public IActionResult PreviewCommand()
         {
-            throw new NotImplementedException();
+            return View("Preview", CreateCommmad());
         }
         
         [Authorize(Roles = "Customer")]
         public IActionResult Preview()
         {
-            return View("Preview", GetUser());
+            return View("Preview", GetCurrentCommand());
         }
 
         [HttpPost]
@@ -52,12 +52,15 @@ namespace ShopWebApplication.Controllers
         [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Payment()
         {
-            throw new NotImplementedException();
-        }        
-        
+            if (ModelState.IsValid)
+            {
+                //TODO : PAYEMENT LIRE HTTT REQUUEST
+            }
+
+            return View("Preview", ConfirmPayment());
+        }
         #endregion
-
-
+        
         #region Method
         private UserModel GetUser()
         {
@@ -104,11 +107,12 @@ namespace ShopWebApplication.Controllers
             }
             return currentUser;
         }
-
-        private ReponseHelper CreateCommmad()
+        
+        // TODO EUH ?
+        private CurrentUserCommandHelper CreateCommmad()
         {
-            CurrentUser currentUser = GetUserIdentity();
-            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080//command/preview/{currentUser.Name}"))
+            UserModel currentUser = GetUser();
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/command/preview/{currentUser.Name}"))
             {
                 _client.DefaultRequestHeaders.Accept.Clear();
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -118,21 +122,52 @@ namespace ShopWebApplication.Controllers
                 if (reponse.IsSuccessStatusCode)
                 {
                     var jsonString = reponse.Content.ReadAsStringAsync().Result;
-                    _currentCommand = JsonSerializer.Deserialize<CommandModel>(jsonString);
-                    return new ReponseHelper(true, "Commande cree !"); 
+                    var commandCree = JsonSerializer.Deserialize<CommandModel>(jsonString);
+                    return new CurrentUserCommandHelper(currentUser, commandCree); 
                 }
             }
-            return new ReponseHelper(false, "Commande pas cree !");
+            return new CurrentUserCommandHelper(currentUser, new CommandModel());
+        }
+
+        private CurrentUserCommandHelper GetCurrentCommand()
+        {
+            var user = GetUser();
+            //var currentUser = GetUserIdentity();
+            var currentCommand = new CommandModel();
+            try
+            {
+                using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/command/current/{user.Name.ToLower()}"))
+                {
+                    _client.DefaultRequestHeaders.Accept.Clear();
+                    request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());
+
+                    var reponse = _client.SendAsync(request).Result;
+                    if (reponse.IsSuccessStatusCode)
+                    {
+                        var jsonString = reponse.Content.ReadAsStringAsync().Result;
+                        currentCommand = JsonSerializer.Deserialize<CommandModel>(jsonString);
+                        return new CurrentUserCommandHelper(user, currentCommand);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{e.Source}: {e.Message}");
+                return new CurrentUserCommandHelper(user, new CommandModel());
+            }
+            return new CurrentUserCommandHelper(user, new CommandModel());
         }
 
         
-        private ReponseHelper ConfirmPayment(UserModel connectedUserModel, String deliveryMode)
+        private CurrentUserCommandHelper ConfirmPayment(UserModel connectedUserModel, String deliveryMode)
         {
             if (connectedUserModel.Wallet >= connectedUserModel.MyCartModel.TotalTva)
             {
                 // using (var client = new HttpClient())
+                var currentCommand = GetCurrentCommand();
                 using (var request = new HttpRequestMessage(HttpMethod.Get,
-                    $"http://localhost:8080/command/checkout/{_currentCommand.Id}?methode={deliveryMode.ToLower()}"))
+                    $"http://localhost:8080/command/checkout/{currentCommand.CurrentCommand.Id}?methode={deliveryMode.ToLower()}"))
                 {
                     _client.DefaultRequestHeaders.Accept.Clear();
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -140,9 +175,11 @@ namespace ShopWebApplication.Controllers
                     var reponse = _client.SendAsync(request).Result;
                     if (reponse.IsSuccessStatusCode)
                     {
-                        return new ReponseHelper(true, "Payement effectué !");
+                        ViewBag.Success = "Payement effectué !";
+                        return new CurrentUserCommandHelper(connectedUserModel, new CommandModel());
                     }
-                    return new ReponseHelper(false, "Erreur serveur lors de l'execution du paiement!");
+                    ViewBag.Error = "Erreur serveur lors de l'execution du paiement! !";
+                    //return new ReponseHelper(false, "Erreur serveur lors de l'execution du paiement!");
                 }
             }
             return new ReponseHelper(false, "Pas assez d'argent de le portefeuille!");

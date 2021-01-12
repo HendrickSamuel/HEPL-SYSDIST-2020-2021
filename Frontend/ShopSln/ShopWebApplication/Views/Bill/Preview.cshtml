@@ -1,10 +1,11 @@
 ﻿@using System.Linq
 @using System.Globalization
 @using ShopWebApplication.Helpers;
-@model ShopWebApplication.Models.POCOS.UserModel  
+@model ShopWebApplication.Helpers.CurrentUserCommandHelper  
 @*TODO: UserModel ou CommandModel ou ... JE MANGE *@
 @{
     ViewData["Title"] = "Bill";
+    Layout = "_LayoutLogged";
     int i = 0;
 }
 
@@ -15,11 +16,11 @@
                 <h1 class="catalog-title text-center">Confirmation du payement</h1>
             </div>
         </div>
-        @if (Model.MyCartModel.TotalElement > 0)
+        @if (Model.CurrentCommand.TotalElement > 0)
         {
             <div class="row mt-3">
                 <div class="col-12">
-                    <table class="table cart-table">
+                    <table class="table cart-table text-center">
                         <thead>
                             <tr>
                                 <th></th>
@@ -32,7 +33,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.MyCartModel.Items)
+                            @foreach (var item in Model.CurrentCommand.Items)
                             {
                                 <tr>
                                     <th class="center-cell">@(++i)</th>
@@ -49,12 +50,12 @@
             </div>
             <div class="row mt-2 mt-lg-5 text-center text-lg-right">
                 <div class="col-12">
-                    <p class="prix-total">Prix total (@Model.MyCartModel.TotalElement articles) : <span>@($"{Model.MyCartModel.TotalTva:0.##}")</span> €</p>
+                    <p class="prix-total">Prix total (@Model.CurrentCommand.TotalElement articles) : <span>@($"{Model.CurrentCommand.Amount:0.##}")</span> €</p>
                 </div>
             </div>
             <div class="row mt-2 mt-lg-5 text-center text-lg-right">
                 <div class="col-12">
-                    <p class="">Porte-feuille : <span>@($"{Model.Wallet:0.##}")</span> €</p>
+                    <p class="">Porte-feuille : <span>@($"{Model.User.Wallet:0.##}")</span> €</p>
                 </div>
             </div>
             <div class="row mt-2 mt-lg-5 text-center text-lg-right">
@@ -104,12 +105,26 @@
         else
         {
             <div class="row mt-3">
-                <div class="col-12">
-                    <div class="cart-empty">
-                        <p class="cart-empty-info">Il n'y a aucune commande en cours</p>
+                    <div class="col-12">
+                        <div class="cart-empty">
+                            <div class="alert-info">
+                                <p class="cart-empty-info text-center p-2">Il n'y a aucune commande en cours</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            if (ViewBag.Success)
+            {
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="cart-empty">
+                            <div class="alert-info">
+                                <p class="cart-empty-info text-center p-2">ViewBag.Success</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         }
     </div>
 </section>

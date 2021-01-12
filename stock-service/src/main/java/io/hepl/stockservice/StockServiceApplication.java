@@ -4,10 +4,12 @@ import io.hepl.stockservice.models.Item;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jms.annotation.EnableJms;
 
 import java.util.ArrayList;
 
 @SpringBootApplication
+@EnableJms
 public class StockServiceApplication {
 
     @Bean

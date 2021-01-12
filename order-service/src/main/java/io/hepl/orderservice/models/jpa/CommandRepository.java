@@ -13,6 +13,7 @@ import java.util.List;
 public interface CommandRepository extends CrudRepository<Command, Integer> {
     List<Command> findByClient(String user);
     Command findByCommande(int id);
+    Command findCommandByClientAndStatus(String user, String status);
 }
 
 

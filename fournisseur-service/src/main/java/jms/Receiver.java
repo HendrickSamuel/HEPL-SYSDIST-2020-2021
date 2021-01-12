@@ -29,7 +29,7 @@ public class Receiver {
             connection = connectionFactory.createConnection();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             destination = session.createTopic("fournisseur.topic");
-            consumer = session.createConsumer(destination);
+            consumer = session.createConsumer(destination, "type=demande-stock");
             //this.HandleMessage();
         } catch (JMSException e) {
             e.printStackTrace();

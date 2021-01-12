@@ -88,7 +88,7 @@ public class CommandResources {
         }
         else
         {
-            restTemplate.getForObject("http://order-service/update/"+id+"/ANULEE", Object.class);
+            restTemplate.getForObject("http://order-service/update/"+id+"/ANNULEE", Object.class);
             return res;
         }
     }
@@ -97,5 +97,19 @@ public class CommandResources {
     public ExposedClient getUsersCommands(@PathVariable String user)
     {
         return restTemplate.getForObject("http://order-service/client/"+user, ExposedClient.class);
+    }
+
+    @RequestMapping("/current/{user}")
+    public Command getCurrentCommand(@PathVariable String user)
+    {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+       // HttpEntity<Personne> httpEntity = new HttpEntity<>(personne, headers);
+
+        Command commande = restTemplate.getForObject("http://order-service/current/" + user, Command.class);
+
+        return commande;
     }
 }
