@@ -5,6 +5,7 @@
 package io.hepl.checkoutservice.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class Item {
@@ -30,6 +31,7 @@ public class Item {
         return quantity;
     }
 
+    @JsonProperty("wantedQuantity")
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
@@ -43,6 +45,7 @@ public class Item {
         return getUnitPrice()*getQuantity();
     }
 
+    @JsonProperty("price")
     public void setUnitPrice(float unitPrice) {
         this.unitPrice = unitPrice;
     }

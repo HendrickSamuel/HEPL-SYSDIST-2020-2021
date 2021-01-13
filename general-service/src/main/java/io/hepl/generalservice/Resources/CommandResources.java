@@ -6,6 +6,7 @@ package io.hepl.generalservice.Resources;
 
 import io.hepl.generalservice.Models.Cart.Client;
 import io.hepl.generalservice.Models.General.ExposedClient;
+import io.hepl.generalservice.Models.General.ExposedCommand;
 import io.hepl.generalservice.Models.General.ExposedItem;
 import io.hepl.generalservice.Models.General.ResponseMessage;
 import io.hepl.generalservice.Models.Order.Command;
@@ -75,18 +76,25 @@ public class CommandResources {
     }
 
     @RequestMapping("/checkout/{id}")
-    public ResponseMessage CheckoutCommand(@PathVariable int id, @RequestParam(required = false) String methode)
+    public ResponseMessage CheckoutCommand(@PathVariable int id, @RequestParam(required = false, defaultValue = "Normal") String methode)
     {
-        methode = (methode == null) ? "Normal" : methode;
-
         Command commande = restTemplate.getForObject("http://order-service/"+id, Command.class);
         if(!commande.getStatus().equalsIgnoreCase("EN ATTENTE DE VALIDATION"))
         {
             return new ResponseMessage(false, "Command already checked-out", "ERROR");
         }
+
         restTemplate.getForObject("http://order-service/update/"+id+"/CHECKOUT", Object.class);
 
         commande.setMode(methode);
+        for(ExposedItem item : commande.getItems())
+        {
+            ItemResponse stockitem = restTemplate.getForObject("http://stock-service/items/"+item.getId(), ItemResponse.class);
+            item.setType(stockitem.getItem().getType());
+            item.setName(stockitem.getItem().getName());
+            TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
+            item.setTva(tvaResponse.getTva());
+        }
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
@@ -109,7 +117,19 @@ public class CommandResources {
     @RequestMapping("list/{user}")
     public ExposedClient getUsersCommands(@PathVariable String user)
     {
-        return restTemplate.getForObject("http://order-service/client/"+user, ExposedClient.class);
+        ExposedClient client = restTemplate.getForObject("http://order-service/client/"+user, ExposedClient.class);
+        for (ExposedCommand commande : client.getCommands())
+        {
+            for(ExposedItem item : commande.getItems())
+            {
+                ItemResponse stockitem = restTemplate.getForObject("http://stock-service/items/"+item.getId(), ItemResponse.class);
+                item.setType(stockitem.getItem().getType());
+                item.setName(stockitem.getItem().getName());
+                TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
+                item.setTva(tvaResponse.getTva());
+            }
+        }
+        return client;
     }
 
     @RequestMapping("/current/{user}")
@@ -130,7 +150,7 @@ public class CommandResources {
             TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
             item.setTva(tvaResponse.getTva());
         }
-        
+
         return commande;
     }
 }

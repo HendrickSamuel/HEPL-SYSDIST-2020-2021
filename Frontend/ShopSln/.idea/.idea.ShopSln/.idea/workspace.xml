@@ -26,46 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e515ae9a-3305-406f-bbca-f663be667027" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Helpers/CurrentUserCommandHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/PropositionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CommandModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CommandModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Bill/Preview.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Bill/Preview.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Cart/Cart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Cart/Cart.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Command/Commands.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Command/Commands.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Catalog/Catalog.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Catalog/Catalog.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/ConsumerMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/ConsumerMessageListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Fournisseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/org/hepl/AppFourniseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/org/hepl/AppFourniseur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../general-service/src/main/java/io/hepl/generalservice/Resources/CommandResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../general-service/src/main/java/io/hepl/generalservice/Resources/CommandResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../order-service/src/main/java/io/hepl/orderservice/models/jpa/CommandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../order-service/src/main/java/io/hepl/orderservice/models/jpa/CommandRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../order-service/src/main/java/io/hepl/orderservice/resources/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../order-service/src/main/java/io/hepl/orderservice/resources/OrderResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/StockServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/StockServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/jms/SenderConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/models/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/models/ItemListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/models/ItemListResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/resources/StockResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/resources/StockResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,43 +47,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03C98CFC-8623-445A-8DB7-B66C6FFA5DEF/aa/a549d3d3/AjaxOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03C98CFC-8623-445A-8DB7-B66C6FFA5DEF/e1/069431b7/AjaxExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5680AE6A-EA19-465B-BB77-A58E98F4FA8C/7e/4a302ca4/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AE7C1865-47F4-431A-A8D8-66290FEC562D/37/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03C98CFC-8623-445A-8DB7-B66C6FFA5DEF/5f/abaae83f/AjaxHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/150/ControllerActivatorProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/595A5ABC-AB92-4E7E-8842-727062C80162/1B/ViewResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/194/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/7/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/595A5ABC-AB92-4E7E-8842-727062C80162/83/ViewResultExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/15/MethodInfoExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/595A5ABC-AB92-4E7E-8842-727062C80162/82/ViewExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/11C/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/CF23F803-6603-41BB-8074-AD1FFDA9DE78/16/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/B/ConfigureServicesBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/12/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/6D/ActionEndpointFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4897A230-3721-46F4-B441-62D1C15092D5/1/HostFilteringMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/9/MvcRazorDiagnosticListenerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/CF23F803-6603-41BB-8074-AD1FFDA9DE78/13/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B9122C9D-8E0F-47D3-9D53-746E4CD7F3B5/D/HostingApplication.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F7AFAF01-9550-4C73-87BE-31162333F4B5/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AB0E3398-3BC1-4635-8E71-8B916CDB3B04/3/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C85CE05F-5B24-41A6-8DB9-8F539D664EEF/5A/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/104ABAEC-530E-4E19-A733-4205E24124DA/4/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EDCC1C9B-42E2-45B6-83A6-1C353936CB63/B/DisplayAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B59107FF-4E89-4FD5-A263-B9B0E20878B3/13/StaticFileMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/57F82247-6809-483B-94E3-D8A20EA8649E/8/HttpClientFactoryServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/137/ControllerActionFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShopWebApplication/Controllers/Catalog.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/595A5ABC-AB92-4E7E-8842-727062C80162/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/595A5ABC-AB92-4E7E-8842-727062C80162/B0/FormMethod.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9C37662-579A-499A-A4DE-B3C85349280D/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -254,6 +181,7 @@
       <workItem from="1609178611823" duration="3540000" />
       <workItem from="1610113431664" duration="12747000" />
       <workItem from="1610389050902" duration="7487000" />
+      <workItem from="1610539152981" duration="650000" />
     </task>
     <servers />
   </component>
@@ -478,53 +406,25 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs</url>
           <line>154</line>
-          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\AuthenticationController.cs" initialLine="154">
-            <startOffsets>
-              <option value="5365" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5401" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\AuthenticationController.cs" initialLine="154" />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
           <line>133</line>
-          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="130">
-            <startOffsets>
-              <option value="4793" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4814" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="130" />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
           <line>40</line>
-          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="40">
-            <startOffsets>
-              <option value="1181" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1221" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="40" />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
           <line>46</line>
-          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="46">
-            <startOffsets>
-              <option value="1342" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1386" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="46" />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
