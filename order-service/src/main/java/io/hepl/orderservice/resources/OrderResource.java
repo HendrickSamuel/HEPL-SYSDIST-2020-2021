@@ -45,6 +45,7 @@ public class OrderResource {
             command.setItems(items);
         }
 
+        //todo: supprimer les autres en attente
         command = repo.save(command);
 
         return command;

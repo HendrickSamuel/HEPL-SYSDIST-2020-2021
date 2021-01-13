@@ -1,14 +1,11 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Bene\\Ecole\\B3\\SysDistribue\\Labo\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
+    "projectUniqueName": "D:\\Documents\\Seraing\\2020-2021\\SYSDIST\\Labos\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
     "projectName": "ShopWebApplication",
-    "projectPath": "C:\\Bene\\Ecole\\B3\\SysDistribue\\Labo\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
-    "outputPath": "C:\\Bene\\Ecole\\B3\\SysDistribue\\Labo\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\obj\\",
+    "projectPath": "D:\\Documents\\Seraing\\2020-2021\\SYSDIST\\Labos\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
+    "outputPath": "D:\\Documents\\Seraing\\2020-2021\\SYSDIST\\Labos\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\obj\\",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "C:\\Microsoft\\Xamarin\\NuGet"
-    ],
     "originalTargetFrameworks": [
       "netcoreapp3.1"
     ],
@@ -83,7 +80,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
     }
   }
 }

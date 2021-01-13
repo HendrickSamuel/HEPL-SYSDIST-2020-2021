@@ -6,6 +6,7 @@ package io.hepl.generalservice.Models.General;
 
 public class ExposedItem {
     private String _id;
+    private String name;
     private int _totalQuantity;
     private int _wantedQuantity;
     private float _tva;
@@ -73,4 +74,11 @@ public class ExposedItem {
         return  (_price + ((_price * _tva)/100))*_wantedQuantity;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

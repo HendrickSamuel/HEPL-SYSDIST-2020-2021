@@ -14,7 +14,6 @@ public class ExposedClient {
     private String _nom;
     private float _porteFeuille;
 
-
     public ExposedClient() {
     }
 

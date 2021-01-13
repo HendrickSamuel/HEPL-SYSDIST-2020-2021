@@ -10,6 +10,9 @@ import io.hepl.generalservice.Models.General.ExposedItem;
 import io.hepl.generalservice.Models.General.ResponseMessage;
 import io.hepl.generalservice.Models.Order.Command;
 import io.hepl.generalservice.Models.Order.Personne;
+import io.hepl.generalservice.Models.Stock.Item;
+import io.hepl.generalservice.Models.Stock.ItemResponse;
+import io.hepl.generalservice.Models.TVA.TvaResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -35,7 +38,8 @@ public class CommandResources {
     @RequestMapping("/preview/{user}")
     public Command checkout(@PathVariable String user)
     {
-        ExposedClient exposedClient = restTemplate.getForObject("http://general-service/cart/get/"+user, ExposedClient.class);
+
+        ExposedClient exposedClient = cart.GetClient(user);
         if(exposedClient.getCart() == null)
         {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
@@ -47,6 +51,7 @@ public class CommandResources {
 
         Personne personne = new Personne(user);
         personne.setItems(exposedClient.getCart().getItems());
+
         personne.setUserId(exposedClient.getId());
 
         HttpHeaders headers = new HttpHeaders();
@@ -57,6 +62,15 @@ public class CommandResources {
 
         Command commande = restTemplate.postForObject("http://order-service/", httpEntity, Command.class);
         restTemplate.getForObject("http://cart-service/cart/remove/"+personne.getUserName(), Object.class);
+        for(ExposedItem item : commande.getItems())
+        {
+            ItemResponse stockitem = restTemplate.getForObject("http://stock-service/items/"+item.getId(), ItemResponse.class);
+            item.setType(stockitem.getItem().getType());
+            item.setName(stockitem.getItem().getName());
+            TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
+            item.setTva(tvaResponse.getTva());
+        }
+
         return commande;
     }
 
@@ -64,7 +78,6 @@ public class CommandResources {
     public ResponseMessage CheckoutCommand(@PathVariable int id, @RequestParam(required = false) String methode)
     {
         methode = (methode == null) ? "Normal" : methode;
-
 
         Command commande = restTemplate.getForObject("http://order-service/"+id, Command.class);
         if(!commande.getStatus().equalsIgnoreCase("EN ATTENTE DE VALIDATION"))
@@ -109,7 +122,15 @@ public class CommandResources {
        // HttpEntity<Personne> httpEntity = new HttpEntity<>(personne, headers);
 
         Command commande = restTemplate.getForObject("http://order-service/current/" + user, Command.class);
-
+        for(ExposedItem item : commande.getItems())
+        {
+            ItemResponse stockitem = restTemplate.getForObject("http://stock-service/items/"+item.getId(), ItemResponse.class);
+            item.setType(stockitem.getItem().getType());
+            item.setName(stockitem.getItem().getName());
+            TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
+            item.setTva(tvaResponse.getTva());
+        }
+        
         return commande;
     }
 }

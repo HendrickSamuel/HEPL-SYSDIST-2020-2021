@@ -436,3 +436,13 @@ C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopW
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\Razor\Views\Command\Commands.cshtml.g.cs
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.csprojAssemblyReference.cache
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.AssemblyInfoInputs.cache
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.AssemblyInfo.cs
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.csproj.CoreCompileInputs.cache
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.MvcApplicationPartsAssemblyInfo.cs
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.RazorAssemblyInfo.cache
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.RazorAssemblyInfo.cs
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.dll
+D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\obj\Debug\netcoreapp3.1\ShopWebApplication.pdb
