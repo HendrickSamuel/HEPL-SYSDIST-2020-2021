@@ -81,6 +81,7 @@ public class CartResources {
             if(client.getItems().containsKey(item.getId()))
             {
                 ExposedItem exposedItem = new ExposedItem();
+                exposedItem.setName(item.getName());
                 exposedItem.setId(item.getId());
                 exposedItem.setPrice(item.getPrice());
                 exposedItem.setTotalQuantity(item.getStock());

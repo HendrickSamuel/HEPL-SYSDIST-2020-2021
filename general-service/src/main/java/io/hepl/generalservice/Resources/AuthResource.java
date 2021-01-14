@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
 public class AuthResource {
 
@@ -33,13 +35,14 @@ public class AuthResource {
     private JwtUtil jwtUtil;
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthToken(@RequestBody AuthentificationRequest authentificationRequest) throws  Exception{
+    public ResponseEntity<?> createAuthToken(@RequestBody AuthentificationRequest authentificationRequest,
+                                             HttpServletResponse response) throws  Exception{
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authentificationRequest.getUsername());
         if(userDetails != null && userDetails.getPassword().equals(authentificationRequest.getPassword()))
         {
             final String jwt = jwtUtil.generateToken(userDetails);
-
+            response.addHeader("token", jwt);
             return ResponseEntity.ok(new AuthentificationResponse(jwt));
         }
         else

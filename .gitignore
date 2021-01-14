@@ -49,6 +49,7 @@ cmake-build-*/
 
 # File-based project format
 *.iws
+*.pdb
 
 # IntelliJ
 out/
@@ -593,3 +594,7 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/csharp,rider
 *.db
 checkout-service/data/demo.mv.db
+Frontend/ShopSln/ShopWebApplication/ShopDB.db-shm
+Frontend/ShopSln/ShopWebApplication/ShopDB.db-wal
+Frontend/ShopSln/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb
+*.pdb
