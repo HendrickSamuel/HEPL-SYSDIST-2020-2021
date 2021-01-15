@@ -29,6 +29,7 @@
       <change afterPath="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseMessage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/../../cart-service/src/main/java/io/hepl/cartservice/resources/CartResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cart-service/src/main/java/io/hepl/cartservice/resources/CartResources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fournisseur-service/src/main/java/jms/Fournisseur.java" afterDir="false" />
@@ -42,6 +43,50 @@
       <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/models/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/resources/StockResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/java/io/hepl/stockservice/resources/StockResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../stock-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../stock-service/src/main/resources/application.properties" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/CartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/CatalogController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/CatalogController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/CommandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/CommandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Helpers/UserCommandHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Helpers/UserCommandHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CommandModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CommandModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Token/TokenManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Token/TokenManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Authentication/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Authentication/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Bill/Preview.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Bill/Preview.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Command/Commands.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Command/Commands.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_LayoutLogged.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_LayoutLogged.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/bin/Debug/netcoreapp3.1/ShopWebApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Catalog/Catalog.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Catalog/Catalog.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/Debug/netcoreapp3.1/ShopWebApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/ShopWebApplication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/ShopWebApplication.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/ShopWebApplication.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/ShopWebApplication.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopWebApplication/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/ShopWebApplication/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,8 +243,13 @@
       <workItem from="1610113431664" duration="12747000" />
       <workItem from="1610389050902" duration="7487000" />
       <workItem from="1610539152981" duration="650000" />
+<<<<<<< Updated upstream
       <workItem from="1610623853449" duration="2576000" />
       <workItem from="1610651042945" duration="3464000" />
+=======
+      <workItem from="1610653395150" duration="9677000" />
+      <workItem from="1610695693794" duration="9283000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -255,11 +305,15 @@
     </state>
     <state x="0" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610628335742" />
     <state x="-1920" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610113848370" />
+<<<<<<< Updated upstream
     <state x="522" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610628310522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="522" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1610628310522" />
     <state width="473" height="646" key="DebuggerActiveHint" timestamp="1610114065825">
+=======
+    <state width="487" height="646" key="DebuggerActiveHint" timestamp="1610656575761">
+>>>>>>> Stashed changes
       <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
     <state width="487" height="646" key="DebuggerActiveHint/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610656575761" />
@@ -273,6 +327,7 @@
     </state>
     <state x="-1620" y="312" key="EditFileWatcherDialog/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607860614412" />
     <state x="300" y="309" width="665" height="688" key="EditFileWatcherDialog/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1609178524912" />
+<<<<<<< Updated upstream
     <state width="1493" height="15" key="GridCell.Tab.0.bottom" timestamp="1610667741121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -299,6 +354,30 @@
     <state width="1877" height="201" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665907" />
     <state width="1877" height="201" key="GridCell.Tab.1.bottom" timestamp="1610398665908">
       <screen x="0" y="0" width="1920" height="1040" />
+=======
+    <state width="1877" height="246" key="GridCell.Tab.0.bottom" timestamp="1610706567417">
+      <screen x="-1920" y="3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="246" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610706567417" />
+    <state width="1877" height="201" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316494" />
+    <state width="1877" height="246" key="GridCell.Tab.0.center" timestamp="1610706567417">
+      <screen x="-1920" y="3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="246" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610706567417" />
+    <state width="1877" height="201" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316494" />
+    <state width="1877" height="246" key="GridCell.Tab.0.left" timestamp="1610706567417">
+      <screen x="-1920" y="3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="246" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610706567417" />
+    <state width="1877" height="201" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316494" />
+    <state width="1877" height="246" key="GridCell.Tab.0.right" timestamp="1610706567417">
+      <screen x="-1920" y="3" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="246" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610706567417" />
+    <state width="1877" height="201" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316494" />
+    <state width="1877" height="202" key="GridCell.Tab.1.bottom" timestamp="1610667738338">
+      <screen x="-1920" y="3" width="1920" height="1040" />
+>>>>>>> Stashed changes
     </state>
     <state width="1877" height="202" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738338" />
     <state width="1877" height="201" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656341106" />
