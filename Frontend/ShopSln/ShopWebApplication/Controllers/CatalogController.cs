@@ -102,7 +102,7 @@ namespace ShopWebApplication.Controllers
             try
             {
                 _client.DefaultRequestHeaders.Accept.Clear();
-                using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/cart/get/{username.ToLower()}"))
+                using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://{TokenManager.GetHost()}:{TokenManager.GetPort()}/cart/get/{username.ToLower()}"))
                 {
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());
@@ -127,7 +127,7 @@ namespace ShopWebApplication.Controllers
             try
             {
                 _client.DefaultRequestHeaders.Accept.Clear();
-                using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/items/"))
+                using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://{TokenManager.GetHost()}:{TokenManager.GetPort()}/items/"))
                 {
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());
@@ -153,7 +153,7 @@ namespace ShopWebApplication.Controllers
         private bool AddItemToCart(string idItem, string user, int quantity)
         {
             _client.DefaultRequestHeaders.Accept.Clear();
-            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/cart/add/{user.ToLower()}/{idItem}/{quantity}"))
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://{TokenManager.GetHost()}:{TokenManager.GetPort()}/cart/add/{user.ToLower()}/{idItem}/{quantity}"))
             {
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenManager.GetToken());

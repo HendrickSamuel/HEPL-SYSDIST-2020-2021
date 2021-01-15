@@ -9,7 +9,7 @@ namespace ShopWebApplication.Helpers
     {
         public string Username { get; set; }
         
-        [JsonPropertyName("items")]
+        [JsonPropertyName("commands")]
         public List<CommandModel> Commands { get; set; }
 
         

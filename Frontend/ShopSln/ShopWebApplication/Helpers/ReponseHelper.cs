@@ -1,6 +1,10 @@
-﻿namespace ShopWebApplication.Helpers
+﻿using System;
+using System.Runtime.Serialization;
+
+namespace ShopWebApplication.Helpers
 {
-    public class ReponseHelper
+    [Serializable]
+    public class ReponseHelper 
     {
         public bool Ok { get; set; }
         public string Message { get; set; }

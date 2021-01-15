@@ -12,7 +12,19 @@ namespace ShopWebApplication.Token
     {
         private static HttpClient _client;
         private static string _token = "";
+        private static string _host = "78.129.34.151";
+        private static int _port = 8080;
 
+
+        public static string GetHost()
+        {
+            return _host;
+        }
+        public static int GetPort()
+        {
+            return _port;
+        }
+        
         public static string GetToken()
         {
             if(_token == String.Empty)
@@ -23,7 +35,7 @@ namespace ShopWebApplication.Token
         {
             if(_client == null)
                 _client = new HttpClient();
-            using (var request = new HttpRequestMessage(HttpMethod.Post, $"http://localhost:8080/auth"))
+            using (var request = new HttpRequestMessage(HttpMethod.Post, $"http://{_host}:{_port}/auth"))
             {
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var body = new Dictionary<string, string>

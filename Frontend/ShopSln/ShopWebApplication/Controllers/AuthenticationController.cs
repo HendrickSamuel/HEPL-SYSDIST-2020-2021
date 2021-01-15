@@ -104,6 +104,7 @@ namespace ShopWebApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterModel obj)
         {
+         //   var reponseHelper = new ReponseHelper();
             if (ModelState.IsValid)
             {
                 if(String.Compare(obj.Password.ToLower(), obj.ConfirmPassword.ToLower(), StringComparison.Ordinal) == 0)
@@ -127,7 +128,9 @@ namespace ShopWebApplication.Controllers
 
                         }
                         _userManager.AddToRoleAsync(user, "Customer").Wait();
+                      //  reponseHelper = new ReponseHelper(){Ok = true, Message ="L'utilisateur a été enregistré, veuillez vous connecter"};
                         ViewBag.Success = "L'utilisateur a été enregistré, veuillez vous connecter";
+                       // TempData["Reponse"] = reponseHelper;
                         SwapCart(obj.UserName);
                         return RedirectToAction("Login", "Authentication");
                     }
@@ -136,10 +139,12 @@ namespace ShopWebApplication.Controllers
                 // Password != ConfirmPassword
                 obj.Password = "";
                 obj.ConfirmPassword = "";
+            //    reponseHelper = new ReponseHelper(){Ok = false, Message ="Le mot de passe encodé ne correspond pas au mot de passe confirmé"};
+
                 ViewBag.Error = "Le mot de passe encodé ne correspond pas au mot de passe confirmé";
                 return View("Register", obj);
             }
-            ViewBag.Error = "Un des champs est invalid";
+            ViewBag.Error = "Un des champs est invalide";
             obj.Password = "";
             obj.ConfirmPassword = "";
             return View("Register", obj);
@@ -154,7 +159,7 @@ namespace ShopWebApplication.Controllers
         {
             var currentUser = GetUserIdentity();
             using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://localhost:8080/cart/swap/{currentUser.Name.ToLower()}/{connectedUser.ToLower()}"))
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"http://{TokenManager.GetHost()}:{TokenManager.GetPort()}/cart/swap/{currentUser.Name.ToLower()}/{connectedUser.ToLower()}"))
             {
                 client.DefaultRequestHeaders.Accept.Clear();
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

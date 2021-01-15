@@ -7560,20 +7560,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hydro\\.nuget\\packages\\": {}
+    "C:\\Users\\Silvio\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\Seraing\\2020-2021\\SYSDIST\\Labos\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
+      "projectUniqueName": "C:\\Bene\\Ecole\\B3\\SysDistribue\\Labo\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
       "projectName": "ShopWebApplication",
-      "projectPath": "D:\\Documents\\Seraing\\2020-2021\\SYSDIST\\Labos\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
-      "packagesPath": "C:\\Users\\hydro\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\Seraing\\2020-2021\\SYSDIST\\Labos\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\obj\\",
+      "projectPath": "C:\\Bene\\Ecole\\B3\\SysDistribue\\Labo\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\ShopWebApplication.csproj",
+      "packagesPath": "C:\\Users\\Silvio\\.nuget\\packages\\",
+      "outputPath": "C:\\Bene\\Ecole\\B3\\SysDistribue\\Labo\\HEPL-SYSDIST-2020-2021\\Frontend\\ShopSln\\ShopWebApplication\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet"
+      ],
       "configFilePaths": [
-        "C:\\Users\\hydro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Silvio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -7649,7 +7654,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

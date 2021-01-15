@@ -53,8 +53,7 @@ namespace ShopWebApplication.Controllers
         #endregion
 
         #region Actions
-
-
+        
         public IActionResult Index()
         {
             var user = _userManager.GetUserAsync(HttpContext.User).Result;

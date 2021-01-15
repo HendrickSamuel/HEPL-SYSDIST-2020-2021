@@ -26,6 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e515ae9a-3305-406f-bbca-f663be667027" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSln/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../cart-service/src/main/java/io/hepl/cartservice/resources/CartResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cart-service/src/main/java/io/hepl/cartservice/resources/CartResources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../checkout-service/data/demo.mv.db" afterDir="false" />
@@ -59,11 +61,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ShopWebApplication/Controllers/Catalog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/194/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/441B1F1D-0007-4533-BF4B-294EFD4F790B/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54AFE7EA-FDE7-4D1E-9BA0-C02D59B6BCB4/9/MvcRazorDiagnosticListenerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ShopWebApplication/Models/Authentification/Login.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/Authentification/LoginModel.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Authentification/Login.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthentificationController.cs" />
@@ -75,45 +79,46 @@
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/DataCatalogHelper.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/Cart.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/ItemCartModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_CartCatalog.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Pages/Validate/Index.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Validate/Validate.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/ValidateController.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Authentication/Login.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Authentication/Register.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/Authentication/LoginModel.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/RegisterModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/UserToken.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Services/ITokenService.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/appsettings.json" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Services/TokenService.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Token/TokenJwt.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Token/TokenManager.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Startup.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CatalogController.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Command/Command.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CartModel.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/UserModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CartController.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/UserCommand.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/UserCommandHelper.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseHelper.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/PreviewCommandHelper.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/CurrentCommand.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CommandController.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/ItemCommandModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CommandModel.cs" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_LayoutLogged.cshtml" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/CurrentUserCommandHelper.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/wwwroot/css/main.scss" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Views/Cart/Cart.cshtml" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Command/Commands.cshtml" />
-        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Bill/Preview.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseMessage.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/UserCommandHelper.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Startup.cs" />
         <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CartController.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CatalogController.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/CommandController.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/appsettings.json" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Token/TokenManager.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Shared/_LayoutLogged.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Models/POCOS/CommandModel.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Helpers/ReponseHelper.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Authentication/Login.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Bill/Preview.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Views/Command/Commands.cshtml" />
+        <option value="$PROJECT_DIR$/ShopWebApplication/Controllers/HomeController.cs" />
       </list>
     </option>
   </component>
@@ -125,8 +130,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.15276273" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.13055255" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.31960997" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.27302274" />
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -257,7 +262,7 @@
     <state width="473" height="646" key="DebuggerActiveHint" timestamp="1610114065825">
       <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="473" height="646" key="DebuggerActiveHint/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610114065825" />
+    <state width="487" height="646" key="DebuggerActiveHint/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610656575761" />
     <state width="473" height="646" key="DebuggerActiveHint/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1609177315010" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1609169471716">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -295,91 +300,91 @@
     <state width="1877" height="201" key="GridCell.Tab.1.bottom" timestamp="1610398665908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396326980" />
-    <state width="1877" height="201" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665908" />
-    <state width="1877" height="201" key="GridCell.Tab.1.center" timestamp="1610398665907">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738338" />
+    <state width="1877" height="201" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656341106" />
+    <state width="1877" height="202" key="GridCell.Tab.1.center" timestamp="1610667738337">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396326979" />
-    <state width="1877" height="201" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665907" />
-    <state width="1877" height="201" key="GridCell.Tab.1.left" timestamp="1610398665907">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738337" />
+    <state width="1877" height="201" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656341106" />
+    <state width="1877" height="202" key="GridCell.Tab.1.left" timestamp="1610667738337">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396326979" />
-    <state width="1877" height="201" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665907" />
-    <state width="1877" height="201" key="GridCell.Tab.1.right" timestamp="1610398665908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738337" />
+    <state width="1877" height="201" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656341106" />
+    <state width="1877" height="202" key="GridCell.Tab.1.right" timestamp="1610667738338">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396326979" />
-    <state width="1877" height="201" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665907" />
-    <state width="1877" height="201" key="GridCell.Tab.2.bottom" timestamp="1610398665908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738338" />
+    <state width="1877" height="201" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656341106" />
+    <state width="1877" height="202" key="GridCell.Tab.2.bottom" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296446" />
-    <state width="1877" height="201" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665908" />
-    <state width="1877" height="201" key="GridCell.Tab.2.center" timestamp="1610398665908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316098" />
+    <state width="1877" height="202" key="GridCell.Tab.2.center" timestamp="1610667738338">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296445" />
-    <state width="1877" height="201" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665908" />
-    <state width="1877" height="201" key="GridCell.Tab.2.left" timestamp="1610398665908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738338" />
+    <state width="1877" height="201" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316098" />
+    <state width="1877" height="202" key="GridCell.Tab.2.left" timestamp="1610667738338">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296445" />
-    <state width="1877" height="201" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665908" />
-    <state width="1877" height="201" key="GridCell.Tab.2.right" timestamp="1610398665908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738338" />
+    <state width="1877" height="201" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316098" />
+    <state width="1877" height="202" key="GridCell.Tab.2.right" timestamp="1610667738338">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296446" />
-    <state width="1877" height="201" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665908" />
-    <state width="1877" height="201" key="GridCell.Tab.3.bottom" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738338" />
+    <state width="1877" height="201" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316098" />
+    <state width="1877" height="202" key="GridCell.Tab.3.bottom" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296447" />
-    <state width="1877" height="201" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
-    <state width="1877" height="201" key="GridCell.Tab.3.center" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.3.center" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296446" />
-    <state width="1877" height="201" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
-    <state width="1877" height="201" key="GridCell.Tab.3.left" timestamp="1610398665908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.3.left" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296446" />
-    <state width="1877" height="201" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665908" />
-    <state width="1877" height="201" key="GridCell.Tab.3.right" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.3.right" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296446" />
-    <state width="1877" height="201" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
-    <state width="1877" height="201" key="GridCell.Tab.4.bottom" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.4.bottom" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.4.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296447" />
-    <state width="1877" height="201" key="GridCell.Tab.4.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
-    <state width="1877" height="201" key="GridCell.Tab.4.center" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.4.bottom/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.4.bottom/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.4.center" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.4.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296447" />
-    <state width="1877" height="201" key="GridCell.Tab.4.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
-    <state width="1877" height="201" key="GridCell.Tab.4.left" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.4.center/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.4.center/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.4.left" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.4.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296447" />
-    <state width="1877" height="201" key="GridCell.Tab.4.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
-    <state width="1877" height="201" key="GridCell.Tab.4.right" timestamp="1610398665909">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="202" key="GridCell.Tab.4.left/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.4.left/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
+    <state width="1877" height="202" key="GridCell.Tab.4.right" timestamp="1610667738339">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state width="1877" height="201" key="GridCell.Tab.4.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610396296447" />
-    <state width="1877" height="201" key="GridCell.Tab.4.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610398665909" />
+    <state width="1877" height="202" key="GridCell.Tab.4.right/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610667738339" />
+    <state width="1877" height="201" key="GridCell.Tab.4.right/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610656316099" />
     <state x="-888" y="255" key="Rider.ProjectTemplateDialog.Size" timestamp="1607761678424">
       <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
     <state x="-888" y="255" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1607761678424" />
-    <state x="794" y="153" key="RiderGenerateDialog" timestamp="1610397100306">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1126" y="156" key="RiderGenerateDialog" timestamp="1610654566453">
+      <screen x="-1920" y="3" width="1920" height="1040" />
     </state>
-    <state x="-1126" y="156" key="RiderGenerateDialog/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610395825234" />
+    <state x="-1126" y="156" key="RiderGenerateDialog/0.0.1920.1040/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1610654566453" />
     <state x="794" y="153" key="RiderGenerateDialog/0.0.1920.1040/-1920.3.1920.1040@0.0.1920.1040" timestamp="1610397100306" />
     <state x="134" y="176" width="1652" height="710" key="SettingsEditor" timestamp="1609178526251">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -426,12 +431,6 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/AuthenticationController.cs</url>
-          <line>154</line>
-          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\AuthenticationController.cs" initialLine="154" />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
           <line>133</line>
           <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="130" />
@@ -439,15 +438,68 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
-          <line>40</line>
+          <line>45</line>
           <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="40" />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
-          <line>46</line>
+          <line>56</line>
           <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="46" />
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/BillController.cs</url>
+          <line>64</line>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\BillController.cs" initialLine="54">
+            <startOffsets>
+              <option value="2098" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2129" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/CommandController.cs</url>
+          <line>60</line>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\CommandController.cs" initialLine="60">
+            <startOffsets>
+              <option value="1854" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1951" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopWebApplication/Controllers/CatalogController.cs</url>
+          <line>125</line>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Controllers\CatalogController.cs" initialLine="125">
+            <startOffsets>
+              <option value="4904" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4957" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopWebApplication/Views/Catalog/Catalog.cshtml</url>
+          <line>22</line>
+          <properties documentPath="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln\ShopWebApplication\Views\Catalog\Catalog.cshtml" initialLine="22" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

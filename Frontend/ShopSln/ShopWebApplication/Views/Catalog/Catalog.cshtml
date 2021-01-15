@@ -25,19 +25,18 @@
                     <div class="col-12 col-lg-6 col-xl-4">
                         @using (Html.BeginForm("OnSelectedItem", "Catalog", FormMethod.Post))
                         {
-                            bool exist = Model.MyCartModel.Items.Exists(itemCart => itemCart.Id == item.Id);
-                            bool stockSuffisant = true;
+                            //bool exist = Model.MyCartModel.Items.Exists(itemCart => itemCart.Id == item.Id);
+                            //bool stockSuffisant = true;
                             bool stockNull = item.Stock == 0;
-                            if (stockNull)
-                            {
-                                stockSuffisant = false;
-                                
-                            }
-                            if (exist)
-                            {
-                                var itemCartModel = Model.MyCartModel.Items.Where(itemCart => itemCart.Id == item.Id).FirstOrDefault();
-                                stockSuffisant = itemCartModel != null && itemCartModel.Quantity < itemCartModel.Stock;
-                            }
+                            // if (stockNull)
+                            // {
+                            //     stockSuffisant = false;
+                            // }
+                            // if (exist)
+                            // {
+                            //     var itemCartModel = Model.MyCartModel.Items.Where(itemCart => itemCart.Id == item.Id).FirstOrDefault();
+                            //     stockSuffisant = itemCartModel != null && itemCartModel.Quantity < itemCartModel.Stock;
+                            // }
                             @Html.AntiForgeryToken();
                             <div id="" class="card-item">
                                 <!-- Cercle avec le stock -->
@@ -80,14 +79,9 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="col-12 mb-3 text-center">
-                                            @if (stockSuffisant)
+                                            @if (!stockNull)
                                             {
                                                 <input placeholder="Quantité" class="form-control quantity-input" required type="number" min="1" max="@item.Stock" name="quantity"/>
-                                                <input type="hidden" name="id-item" value="@item.Id">
-                                            }
-                                            else if(stockNull)
-                                            {
-                                                <input placeholder="Quantité" class="form-control quantity-input" readonly type="number" min="1" max="@item.Stock" name="quantity"/>
                                                 <input type="hidden" name="id-item" value="@item.Id">
                                             }
                                             else
@@ -103,30 +97,15 @@
                                     <div class="row">
                                         <!-- Bouton Add -->
                                         <div class="col-12">
-                                            @if (exist)
-                                            {
-                                                if (stockSuffisant)
-                                                {
-                                                    <button type="submit" onclick="" class="card-item-btn-add">Add</button>
-                                                }
-                                                else
-                                                {
-                                                    <button type="submit" disabled onclick="" class="card-item-btn-add-disabled">Add</button>
-                                                }
-                                            }
-                                            else
-                                            {
-                                                if(stockNull)
+                                            @if(stockNull)
                                                 {
                                                     <button type="submit" disabled onclick="" class="card-item-btn-add-disabled">Add</button>
                                                 }
                                                 else
                                                 {
                                                     <button type="submit"  onclick="" class="card-item-btn-add">Add</button>
-
                                                 }
-                                                // formaction="/Catalog/OnSelectedItem/@(item.Id)"
-                                            }
+                              
                                         </div>
                                 </div>
                             </div>

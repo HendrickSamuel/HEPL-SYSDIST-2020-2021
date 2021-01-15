@@ -62,7 +62,7 @@ namespace ShopWebApplication.Controllers
             try
             {
                 using (var request = new HttpRequestMessage(HttpMethod.Get,
-                    $"http://localhost:8080/command/list/{userCommandHelper.Username.ToLower()}"))
+                    $"http://{TokenManager.GetHost()}:{TokenManager.GetPort()}/command/list/{userCommandHelper.Username.ToLower()}"))
                 {
                     _client.DefaultRequestHeaders.Accept.Clear();
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

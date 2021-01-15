@@ -63,21 +63,6 @@
                     <p class="">Methode de livraison : </p>
                 </div>
             </div>
-            <div class="row my-2 mb-2 mt-lg-5 text-center">
-                <div class="col-12">
-                    @if (ViewBag.Error != null)
-                    {
-                        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
-                    }
-                    else if (ViewBag.Success != null)
-                    {
-                        <div class="alert alert-success" role="alert">
-                            @ViewBag.Success
-                        </div>
-                    }
-                </div>
-            </div>
-            
             @using (Html.BeginForm("Payment", "Bill", FormMethod.Post))
             {
                 @Html.AntiForgeryToken();
@@ -101,25 +86,51 @@
                     </div>
                 </div>
             }
+            <div class="row my-2 mb-2 mt-lg-5 text-center">
+                <div class="col-12">
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+                    }
+                    else if (ViewBag.Success != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @ViewBag.Success
+                        </div>
+                    }
+                </div>
+            </div>
         }
         else
         {
-            <div class="row mt-3">
-                    <div class="col-12">
-                        <div class="cart-empty">
-                            <div class="alert-info">
-                                <p class="cart-empty-info text-center p-2">Il n'y a aucune commande en cours</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            if (ViewBag.Success)
+@*             <div class="row mt-3"> *@
+@*                 <div class="col-12"> *@
+@*                     <div class="cart-empty"> *@
+@*                         <div class="alert-info"> *@
+@*                             <p class="cart-empty-info text-center p-2">Il n'y a aucune commande en cours</p> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                 </div> *@
+@*             </div> *@
+            if (ViewBag.Success != null)
             {
                 <div class="row mt-3">
                     <div class="col-12">
                         <div class="cart-empty">
-                            <div class="alert-info">
-                                <p class="cart-empty-info text-center p-2">ViewBag.Success</p>
+                            <div class="alert-success">
+                                <p class="cart-empty-info text-center p-2">@(ViewBag.Success)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (ViewBag.Error != null)
+            {
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="cart-empty">
+                            <div class="alert-danger">
+                                <p class="cart-empty-info text-center p-2">@(ViewBag.Error)</p>
                             </div>
                         </div>
                     </div>

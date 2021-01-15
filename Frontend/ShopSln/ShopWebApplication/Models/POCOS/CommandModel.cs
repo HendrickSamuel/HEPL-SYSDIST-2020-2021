@@ -15,7 +15,7 @@ namespace ShopWebApplication.Models.POCOS
         public string Status { get; set; }
         
         [JsonPropertyName("mode")]
-        public string Mode { get; set; } // TODO: PAS PRESENT DANS LA REQUET JSON
+        public string Mode { get; set; }
 
         [JsonPropertyName("items")]
         public List<ItemCommandModel> Items { get; set; }
@@ -43,7 +43,5 @@ namespace ShopWebApplication.Models.POCOS
             Mode = "";
             Items = new List<ItemCommandModel>();
         }
-        
-        
     }
 }

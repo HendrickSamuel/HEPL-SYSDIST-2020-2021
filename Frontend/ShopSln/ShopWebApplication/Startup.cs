@@ -79,6 +79,7 @@ namespace ShopWebApplication
             // SECOND : are you allowed ?
             app.UseAuthorization();
 
+            
             TokenManager.GetToken();
             IdentityDataInitializer.SeedData(userManager, roleManager);
 

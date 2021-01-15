@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\hydro\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\hydro\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ShopSln.890699015.00" t="ExcludeRecursive" />
-    <e p="C:\Users\hydro\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\hydro\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
-    <e p="D:\Documents\Seraing\2020-2021\SYSDIST\Labos\HEPL-SYSDIST-2020-2021\Frontend\ShopSln" t="IncludeFlat">
+    <e p="C:\Bene\Ecole\B3\SysDistribue\Labo\HEPL-SYSDIST-2020-2021\Frontend\ShopSln" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="ShopSln.sln" t="IncludeFlat" />
       <e p="ShopWebApplication" t="IncludeRecursive">
@@ -32,6 +28,7 @@
           <e p="ItemShopHelper.cs" t="Include" />
           <e p="PreviewCommandHelper.cs" t="Include" />
           <e p="ReponseHelper.cs" t="Include" />
+          <e p="ReponseMessage.cs" t="Include" />
           <e p="UserCommandHelper.cs" t="Include" />
           <e p="UserToken.cs" t="Include" />
         </e>
@@ -68,6 +65,7 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="ShopDB.db" t="Include" />
         <e p="ShopWebApplication.csproj" t="IncludeRecursive" />
         <e p="Startup.cs" t="Include" />
         <e p="Token" t="Include">
@@ -204,5 +202,10 @@
         </e>
       </e>
     </e>
+    <e p="C:\Users\Silvio\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ShopSln.1643659596.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Silvio\AppData\Roaming\JetBrains\Rider2020.2\javascript\extLibs\http_unpkg.com_swiper_swiper-bundle.js" t="IncludeRecursive" />
   </component>
 </project>

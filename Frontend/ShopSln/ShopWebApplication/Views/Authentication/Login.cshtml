@@ -1,8 +1,21 @@
-﻿@model ShopWebApplication.Models.Authentication.LoginModel;
+﻿@using ShopWebApplication.Helpers
+@model ShopWebApplication.Models.Authentication.LoginModel;
 
 @{
     ViewBag.Title = "Login";
     Layout = "_Layout";
+    // var reponseTemp = TempData["Reponse"] as ReponseHelper;
+    // if (reponseTemp != null)
+    // {
+    //     if (reponseTemp.Ok)
+    //     {
+    //         ViewBag.Success = reponseTemp.Message;
+    //     }
+    //     else
+    //     {
+    //         ViewBag.Error = reponseTemp.Message;
+    //     }
+    // }
 }
 
 <section class=" mt-5 ">
