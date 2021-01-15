@@ -21,48 +21,37 @@ import javax.jms.Queue;
 import javax.jms.Topic;
 
 @Configuration
-@EnableJms
 public class Config {
 
-//    @Value("${activemq.broker-url}")
-//    private String brokerUrl;
+    @Value("${spring.activemq.broker-url}")
+    private String brokerUrl;
 
-//    @Value("${fournisseur.topic}")
-//    private String fournisseurTopicName;
+    @Value("${fournisseur.topic}")
+    private String fournisseurTopicName;
 
-//    @Value("${test.topic}")
-//    private String testTopicName;
+    @Value("${test.topic}")
+    private String testTopicName;
 
 //    @Bean
 //    public Topic topicFourniseur(){
 //        return new ActiveMQTopic(testTopicName);
 //    }
 
-//    @Bean
-//    public ActiveMQConnectionFactory activeMQConnectionFactory(){
-//        ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory();
-//        factory.setBrokerURL(brokerUrl);
-//        return factory;
-//    }
-
-    public MessageConverter jacksonJmsMessageConverter() {
-        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
-        converter.setTargetType(MessageType.TEXT);
-        converter.setTypeIdPropertyName("_type");
-        return converter;
+    @Bean
+    public Topic queue() {
+        return new ActiveMQTopic(fournisseurTopicName);
     }
 
     @Bean
-    public DefaultJmsListenerContainerFactory jmsContainerFactory(SingleConnectionFactory connectionFactory,
-                                                     DefaultJmsListenerContainerFactoryConfigurer configurer) {
-        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-      //  factory.setMessageConverter(jacksonJmsMessageConverter());
-        factory.setConnectionFactory(connectionFactory);
-        configurer.configure(factory, connectionFactory);
+    public ActiveMQConnectionFactory activeMQConnectionFactory() {
+        ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory();
+        factory.setBrokerURL(brokerUrl);
         return factory;
     }
-//    @Bean
-//    public JmsTemplate jmsTemplate(){
-//        return new JmsTemplate(this.activeMQConnectionFactory());
-//    }
+
+    @Bean
+    public JmsTemplate jmsTemplate() {
+        return new JmsTemplate(activeMQConnectionFactory());
+    }
+
 }

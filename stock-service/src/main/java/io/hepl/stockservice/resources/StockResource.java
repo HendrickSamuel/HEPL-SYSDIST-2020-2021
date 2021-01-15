@@ -4,6 +4,7 @@
 
 package io.hepl.stockservice.resources;
 
+import com.netflix.discovery.converters.Auto;
 import io.hepl.stockservice.jms.Receiver;
 import io.hepl.stockservice.jms.Sender;
 import io.hepl.stockservice.models.Item;
@@ -17,12 +18,19 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.function.Predicate;
 
 @RestController
 @RequestMapping("/stock")
 public class StockResource {
+
+    @Autowired
+    private Sender sender;
+
+    @Autowired Receiver receiver;
 
     @Autowired
     private ArrayList<Item> items;
@@ -60,33 +68,49 @@ public class StockResource {
             item.setStock(item.getStock() - quantity);
             if(item.getStock() <= 0)
             {
-                //Envoi Message au service Stock
-                DemandeRechargerStock(item);
-                ComparaisonPropositionItem();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        DemandeRechargerStock(item);
+                        ComparaisonPropositionItem(item.getId());
+                    }
+                }).start();
+
             }
         }
         else
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
     }
 
+    @RequestMapping("/launchTest")
+    public String test()
+    {
+        Item item = getItemById("item-4");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DemandeRechargerStock(item);
+                ComparaisonPropositionItem(item.getId());
+            }
+        }).start();
+        return "ok";
+    }
 
     private void DemandeRechargerStock(Item item) {
-        new Sender().DemandeStock(item);
+        sender.DemandeStock(item);
     }
-    private void ComparaisonPropositionItem() {
-        Receiver receiver = new Receiver();
-        LinkedList<Item> items = receiver.AttentePropositionItem();
-        LinkedList<Float> prices = new LinkedList<Float>();
-        Item newItem = null;
-        if(items.size() > 0){
-            for (Item item: items) prices.add(item.getPrice());
-            // On Compare et on recharge le stock
-            float price = prices.stream().min(Float::compare).get();
-            newItem = items.stream().filter(item -> item.getPrice() == price).findAny().orElse(null);
-            if(newItem != null){
-                // Recharge
 
-            }
+    private void ComparaisonPropositionItem(String id) {
+        LinkedList<Item> items = receiver.AttentePropositionItem(id);
+        if(items!= null && items.size() >= 1)
+        {
+            Collections.sort(items, new Comparator<Item>() {
+                @Override
+                public int compare(Item o1, Item o2) {
+                    return Float.compare(o1.getPrice(), o2.getPrice());
+                }
+            });
+            AddItem(items.getFirst().getId(), items.getFirst().getStock());
         }
     }
 

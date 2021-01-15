@@ -26,6 +26,12 @@ public class Item implements Serializable {
         this.stock = stock;
     }
 
+    public Item(String id, float price, int stock) {
+        this.id = id;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public String getId() {
         return id;
     }

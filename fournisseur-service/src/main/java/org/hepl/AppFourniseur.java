@@ -9,9 +9,17 @@ public class AppFourniseur {
     private Fournisseur fournisseur;
 
     public static void main(String[] args) {
-        Fournisseur fournisseur = new Fournisseur("tcp://localhost:61616", latch);
-        System.out.println(fournisseur);
-        fournisseur.ReceiveMsg();
+        for (int i = 0; i < 5; i++)
+        {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Fournisseur fournisseur = new Fournisseur("tcp://localhost:61616", latch);
+                    System.out.println(fournisseur);
+                    fournisseur.ReceiveMsg();
+                }
+            }).start();
+        }
     }
 
 

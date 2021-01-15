@@ -5,21 +5,37 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 @Component
 public class Receiver {
+
+    private HashMap<String, ArrayList<String>> pendingRequests;
     private static final Logger logger = LoggerFactory.getLogger(Receiver.class);
-    LinkedList<Item> itemsFournisseurs;
-    @JmsListener(destination = "${fournisseur.topic}", containerFactory = "jmsContainerFactory", selector = "type = 'proposition-stock'")
-    public void receiveProposition(Item item){
-        logger.info("Message Recu : " + item);
-        itemsFournisseurs.add(item);
+
+    public Receiver(HashMap<String, ArrayList<String>> pendingRequests) {
+        this.pendingRequests = pendingRequests;
     }
 
-    public LinkedList<Item> AttentePropositionItem(){
+    @JmsListener(destination = "${fournisseur.topic}", selector = "type='proposition-stock'")
+    public void receiveProposition(String item){
+        logger.info("Message Recu : " + item);
+        String id = item.split("##")[0];
+        if(pendingRequests.containsKey(id))
+            pendingRequests.get(id).add(item);
+    }
+
+    public synchronized LinkedList<Item> AttentePropositionItem(String id){
+        if(pendingRequests.containsKey(id))
+            return null;
+
+        pendingRequests.put(id, new ArrayList<>());
+
         int attente = 5;
-        LinkedList<Item> items = new LinkedList<>();
+
         try {
             for (int i = 1; i <= attente; i++) {
                 logger.warn("AttentePropositionItem - attente de 5s, tentative n"+i);
@@ -29,10 +45,19 @@ public class Receiver {
             e.printStackTrace();
             return new LinkedList<>();
         }
-        for (int i = 0; i < itemsFournisseurs.size(); i++) {
-            items.add(itemsFournisseurs.get(i));
+
+        LinkedList<Item> items = new LinkedList<>();
+        for (String string : pendingRequests.get(id))
+        {
+            String idNewItem = string.split("##")[0];
+            String quantity = string.split("##")[1];
+            String price = string.split("##")[2];
+            items.add(new Item(idNewItem, Float.parseFloat(price), Integer.parseInt(quantity)));
         }
-        itemsFournisseurs.clear();
+
+        pendingRequests.remove(id);
+
         return items;
+
     }
 }

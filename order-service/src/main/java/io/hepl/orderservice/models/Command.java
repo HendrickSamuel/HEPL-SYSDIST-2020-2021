@@ -22,6 +22,7 @@ public class Command {
     private String client;
     private int clientId;
     private String status; // PREPARATION / EXPEDIEE / RECEPTIONNEE
+    private String mode;
 
     public Command(String client) {
         this.client = client;
@@ -79,5 +80,13 @@ public class Command {
 
     public void setUserId(int userId) {
         this.clientId = userId;
+    }
+
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 }

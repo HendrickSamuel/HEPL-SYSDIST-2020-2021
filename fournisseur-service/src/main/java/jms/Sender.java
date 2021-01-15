@@ -29,7 +29,7 @@ public class Sender {
             connectionFactory = new ActiveMQConnectionFactory(this.brokerAddress);
             connection = connectionFactory.createConnection();
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            destination = session.createTopic("enset.topic");
+            destination = session.createTopic("fournisseur.topic");
             producer = session.createProducer(destination);
         } catch (JMSException e) {
             e.printStackTrace();
@@ -60,6 +60,7 @@ public class Sender {
            this.producer.send(objectMessage);
         }else if(obj instanceof String){
             TextMessage textMessage = this.session.createTextMessage((String)obj);
+            textMessage.setStringProperty("type", "proposition-stock");
             this.producer.send(textMessage);
         }
     }

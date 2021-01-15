@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -50,7 +51,7 @@ public class CommandResources {
             restTemplate.getForObject("http://stock-service/stock/remove/"+item.getId()+"/"+item.getWantedQuantity(), Object.class);
         }
 
-        Personne personne = new Personne(user);
+        Personne personne = new Personne(user.toLowerCase());
         personne.setItems(exposedClient.getCart().getItems());
 
         personne.setUserId(exposedClient.getId());
@@ -85,6 +86,7 @@ public class CommandResources {
         }
 
         restTemplate.getForObject("http://order-service/update/"+id+"/CHECKOUT", Object.class);
+        //restTemplate.getForObject("http://order-service/updateMode/"+id+"/"+methode, Object.class);
 
         commande.setMode(methode);
         for(ExposedItem item : commande.getItems())
@@ -140,17 +142,20 @@ public class CommandResources {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
        // HttpEntity<Personne> httpEntity = new HttpEntity<>(personne, headers);
-
-        Command commande = restTemplate.getForObject("http://order-service/current/" + user, Command.class);
-        for(ExposedItem item : commande.getItems())
+        try{
+            Command commande = restTemplate.getForObject("http://order-service/current/" + user, Command.class);
+            for(ExposedItem item : commande.getItems())
+            {
+                ItemResponse stockitem = restTemplate.getForObject("http://stock-service/items/"+item.getId(), ItemResponse.class);
+                item.setType(stockitem.getItem().getType());
+                item.setName(stockitem.getItem().getName());
+                TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
+                item.setTva(tvaResponse.getTva());
+            }
+            return commande;
+        }catch (HttpClientErrorException.NotFound e)
         {
-            ItemResponse stockitem = restTemplate.getForObject("http://stock-service/items/"+item.getId(), ItemResponse.class);
-            item.setType(stockitem.getItem().getType());
-            item.setName(stockitem.getItem().getName());
-            TvaResponse tvaResponse = restTemplate.getForObject("http://tva-service/"+item.getType(), TvaResponse.class);
-            item.setTva(tvaResponse.getTva());
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
         }
-
-        return commande;
     }
 }

@@ -3,10 +3,13 @@ package io.hepl.stockservice;
 import io.hepl.stockservice.models.Item;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.core.JmsTemplate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @SpringBootApplication
 @EnableJms
@@ -27,6 +30,12 @@ public class StockServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(StockServiceApplication.class, args);
+    }
+
+    @Bean
+    public HashMap<String, ArrayList<String>> getItemsComparaisonMap()
+    {
+        return new HashMap<>();
     }
 
 }

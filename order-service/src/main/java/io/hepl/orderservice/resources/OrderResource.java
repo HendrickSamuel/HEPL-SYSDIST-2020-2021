@@ -59,6 +59,14 @@ public class OrderResource {
         repo.save(commandToReturn);
     }
 
+    @RequestMapping("updateMode/{commande}/{state}")
+    public void updateMode(@PathVariable int commande, @PathVariable String mode)
+    {
+        Command commandToReturn = repo.findByCommande(commande);
+        commandToReturn.setMode(mode);
+        repo.save(commandToReturn);
+    }
+
     @RequestMapping("{commande}")
     public Command getCommande(@PathVariable int commande)
     {

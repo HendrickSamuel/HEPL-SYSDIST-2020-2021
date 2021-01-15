@@ -25,17 +25,7 @@ public class CartResources {
     @RequestMapping("/add/{user}/{item}/{quantity}")
     public void addItemToCart(@PathVariable String user, @PathVariable String item, @PathVariable int quantity)
     {
-        Client target = null;
-        for(Client client : clients)
-        {
-            if(client.getUserID().equals(user))
-            target = client;
-        }
-        if(target == null)
-        {
-            target = new Client(user);
-            clients.add(target);
-        }
+        Client target = findClientByName(user);
 
         if(target.getItems().containsKey(item))
         {
@@ -52,25 +42,14 @@ public class CartResources {
     @RequestMapping("/remove/{user}/{item}/{quantity}")
     public void removeItemToCart(@PathVariable String user, @PathVariable String item, @PathVariable int quantity)
     {
-        Client target = null;
-        for(Client client : clients)
-        {
-            if(client.getUserID().equals(user))
-                target = client;
-        }
-        if(target == null)
-        {
-            target = new Client(user);
-            clients.add(target);
-        }
+        Client target = findClientByName(user);
 
         if(target.getItems().containsKey(item))
         {
             int newQuantity = target.getItems().get(item) - quantity;
             if(newQuantity <= 0)
-            target.getItems().remove(item);
-            else
-            target.getItems().put(item, newQuantity);
+                target.getItems().remove(item);
+            else    target.getItems().put(item, newQuantity);
         }
         else
         {
@@ -84,7 +63,7 @@ public class CartResources {
         for(Client client : clients)
         {
             if(client.getUserID().equals(user))
-                clients.remove(client);
+                client.setItems(new HashMap<>());
             break;
         }
     }
@@ -92,21 +71,16 @@ public class CartResources {
     @RequestMapping("/swap/{oldUser}/{newUser}")
     public void swapClient(@PathVariable String oldUser, @PathVariable String newUser)
     {
-        Client oldClient = null;
-        Client newClient = null;
-        for(Client client : clients)
-        {
-            if(client.getUserID().equals(oldUser))
-               oldClient = client;
-            else if(client.getUserID().equals(newUser))
-                newClient = client;
-        }
+        Client oldClient = findClientByName(oldUser);
+        Client newClient = findClientByName(newUser);
 
         if(newClient != null)
         {
             HashMap<String, Integer> mapTmp = new HashMap<>();
-            mapTmp.putAll(newClient.getItems());
-            mapTmp.putAll(oldClient.getItems()); //on sait qu'il y a une exception mais ce n'est pas dans un systeme distrib
+            if(newClient.getItems() != null)
+                mapTmp.putAll(newClient.getItems());
+            if(oldClient.getItems() != null)
+                mapTmp.putAll(oldClient.getItems()); //on sait qu'il y a une exception mais ce n'est pas dans un systeme distrib
             newClient.setItems(mapTmp);
         }
         else
@@ -125,5 +99,20 @@ public class CartResources {
         }
 
         return new Client(user);
+    }
+
+    private Client findClientByName(String user)
+    {
+        for(Client client : clients)
+        {
+            if(client.getUserID().equals(user))
+                return client;
+        }
+
+        Client newClient = new Client(user);
+        clients.add(newClient);
+
+        return newClient;
+
     }
 }

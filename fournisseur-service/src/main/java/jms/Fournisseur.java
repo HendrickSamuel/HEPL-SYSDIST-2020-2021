@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class Fournisseur {
     private CountDownLatch latch;
-    static int currentId = 0;
+    static volatile int currentId = 0;
     int id;
     Receiver receiver;
     Sender sender;
@@ -72,8 +72,9 @@ public class Fournisseur {
         if(message instanceof TextMessage){
             TextMessage textMessage = (TextMessage) message;
             try {
-                System.out.println("Fournisseur " + id + " - " + String.format("%1$tY-%1$tm-%1$td,%1$tH:%1$tM:%1$tS", new Date()) + "\n\tEnvoi du TextMessage : " + textMessage.getText());
-                this.sender.Send(textMessage.getText());
+                String response = textMessage.getText() + "##"+RandomStock()+"##"+RandomFloat();
+                System.out.println("Fournisseur " + id + " - " + String.format("%1$tY-%1$tm-%1$td,%1$tH:%1$tM:%1$tS", new Date()) + "\n\tEnvoi du TextMessage : " + response);
+                this.sender.Send(response);
             } catch (JMSException e) {
                 e.printStackTrace();
             }
