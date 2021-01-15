@@ -62,7 +62,7 @@ public class CartResources {
     {
         for(Client client : clients)
         {
-            if(client.getUserID().equals(user))
+            if(client.getUserID().equalsIgnoreCase(user))
                 client.setItems(new HashMap<>());
             break;
         }
@@ -74,19 +74,14 @@ public class CartResources {
         Client oldClient = findClientByName(oldUser);
         Client newClient = findClientByName(newUser);
 
-        if(newClient != null)
-        {
-            HashMap<String, Integer> mapTmp = new HashMap<>();
-            if(newClient.getItems() != null)
-                mapTmp.putAll(newClient.getItems());
-            if(oldClient.getItems() != null)
-                mapTmp.putAll(oldClient.getItems()); //on sait qu'il y a une exception mais ce n'est pas dans un systeme distrib
-            newClient.setItems(mapTmp);
-        }
-        else
-        {
-            oldClient.setUserID(newUser);
-        }
+        HashMap<String, Integer> mapTmp = new HashMap<>();
+        if(newClient.getItems() != null)
+            mapTmp.putAll(newClient.getItems());
+        if(oldClient.getItems() != null)
+            mapTmp.putAll(oldClient.getItems()); //on sait qu'il y a une exception mais ce n'est pas dans un systeme distrib
+        newClient.setItems(mapTmp);
+
+        oldClient.setItems(new HashMap<>());
     }
 
     @RequestMapping("/list/{user}")
@@ -105,7 +100,7 @@ public class CartResources {
     {
         for(Client client : clients)
         {
-            if(client.getUserID().equals(user))
+            if(client.getUserID().equalsIgnoreCase(user))
                 return client;
         }
 
